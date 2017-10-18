@@ -2,6 +2,7 @@ package cn.jxufe;
 
 import java.io.Serializable;
 
+
 public class Person implements Serializable {
 	private String message;
 
