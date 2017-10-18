@@ -1,0 +1,26 @@
+http://www.cnblogs.com/frankliiu-java/archive/2010/01/12/1644732.html
+
+http://blog.csdn.net/zdp072/article/details/38847859
+参考：http://blog.csdn.net/qjyong/article/details/1833457(important)
+
+
+JSF2 （mojarra 2.2.14） + primefaces 5.1
+mojarra是sun （现在是oracle） 实现的
+还有一个JSF实现 apache  myfaces
+
+
+http://localhost:8080/JSFAndPrimefacesProject/pages/index.jsf  (注意实际后缀名为jsp)
+http://localhost:8080/JSFAndPrimefacesProject/pages/show.xhtml
+
+
+  ***********************************************************
+ 
+ 集成primefaces注意 show.xhtml  标签  f
+以及faces-config.xml头部的配置
+ 
+后续primefaces教程
+http://www.cnblogs.com/white-knight/p/3443546.html
+ ***********************************************************
+http://localhost:8080/JSFAndPrimefacesProject/pages/home.xhtml
+ 
+ 

@@ -1,0 +1,18 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<!-- 我们也可以结合模板和其他标签来创建一个新的页面。使用ui:define标记来覆盖默认值。 -->
+		<ui:define name="content">
+			<h:link value="Page 1" outcome="page1" />
+
+			<h:link value="Page 2" outcome="page2" />
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+</html>
