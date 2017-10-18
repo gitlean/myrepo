@@ -7,28 +7,27 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 /**
- * ´¦ÀíÆ÷/Ò³Ãæ¿ØÖÆÆ÷
+ * å¤„ç†å™¨/é¡µé¢æ§åˆ¶å™¨
  * description 
  * @author john
- * @date 2017Äê10ÔÂ17ÈÕ
+ * @date 2017å¹´10æœˆ17æ—¥
  */
 
 public class HelloWorldController implements Controller {
 
-	@Override
 	public ModelAndView handleRequest(HttpServletRequest req,
 			HttpServletResponse resp) throws Exception {
-		// 1¡¢ÊÕ¼¯²ÎÊı¡¢ÑéÖ¤²ÎÊı
-		// 2¡¢°ó¶¨²ÎÊıµ½ÃüÁî¶ÔÏó
-		// 3¡¢½«ÃüÁî¶ÔÏó´«ÈëÒµÎñ¶ÔÏó½øĞĞÒµÎñ´¦Àí
+		// 1ã€æ”¶é›†å‚æ•°ã€éªŒè¯å‚æ•°
+		// 2ã€ç»‘å®šå‚æ•°åˆ°å‘½ä»¤å¯¹è±¡
+		// 3ã€å°†å‘½ä»¤å¯¹è±¡ä¼ å…¥ä¸šåŠ¡å¯¹è±¡è¿›è¡Œä¸šåŠ¡å¤„ç†
 		
-		// 4¡¢Ñ¡ÔñÏÂÒ»¸öÒ³Ãæ
+		// 4ã€é€‰æ‹©ä¸‹ä¸€ä¸ªé¡µé¢
 		ModelAndView mv = new ModelAndView();
 		
-		// Ìí¼ÓÄ£ĞÍÊı¾İ ¿ÉÒÔÊÇÈÎÒâµÄPOJO¶ÔÏó
+		// æ·»åŠ æ¨¡å‹æ•°æ® å¯ä»¥æ˜¯ä»»æ„çš„POJOå¯¹è±¡
 		mv.addObject("message", "Hello World!,This message is from  controler");
 		
-		// ÉèÖÃÂß¼­ÊÓÍ¼Ãû£¬ÊÓÍ¼½âÎöÆ÷»á¸ù¾İ¸ÃÃû×Ö½âÎöµ½¾ßÌåµÄÊÓÍ¼Ò³Ãæ
+		// è®¾ç½®é€»è¾‘è§†å›¾åï¼Œè§†å›¾è§£æå™¨ä¼šæ ¹æ®è¯¥åå­—è§£æåˆ°å…·ä½“çš„è§†å›¾é¡µé¢
 		mv.setViewName("hello");
 		
 		return mv;

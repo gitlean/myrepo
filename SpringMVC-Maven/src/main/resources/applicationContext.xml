@@ -11,7 +11,7 @@
 	<!-- bean definitions here -->
 	<context:component-scan base-package="cn.jxufe" />
 
-	<import resource="JPAEntityManager.xml" />
+	<import resource="JPAEntityManagerFactory.xml" />
 
 
 	<bean id="person" class="cn.jxufe.Person">

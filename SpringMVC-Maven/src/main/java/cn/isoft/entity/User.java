@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "USER")
+@Entity(name = "USER")  //mapping
+@Table(name = "TB_USER")  //对应的表
 public class User implements Serializable {
 	@Id
 	@Column(name = "ID")
@@ -47,7 +47,7 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "[id:"+uid+",name"+uname+",age:"+age+"]";
+		return "[id:"+uid+",name:"+uname+",age:"+age+"]";
 	}
 	
 	

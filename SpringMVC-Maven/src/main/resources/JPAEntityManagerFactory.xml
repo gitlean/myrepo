@@ -14,17 +14,18 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<!-- 指定数据源 -->
 		<property name="dataSource" ref="dataSource" />
-		<property name="persistenceProvider" ref="persistenceProvider" />
-
-
 		<!-- 指定Entity实体类包路径 -->
 		<property name="packagesToScan">
 			<array>
 				<value>cn.isoft.entity</value>
 			</array>
 		</property>
-		
-		
+
+
+		<property name="persistenceProvider" ref="persistenceProvider" />
+
+
+
 		<!-- 指定Jpa持久化实现厂商类 -->
 		<property name="jpaVendorAdapter">
 			<bean id="hibernateJpaVendorAdapter"
@@ -36,6 +37,12 @@
 				<property name="showSql" value="false" />
 			</bean>
 		</property>
+		
+		
+		<property name="jpaDialect">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"></bean>
+		</property>
+		
 		<!-- 指定JPA属性 -->
 		<property name="jpaPropertyMap">
 			<map>
@@ -49,6 +56,9 @@
 				<entry key="hibernate.cache.use_second_level_cache" value="false" />
 			</map>
 		</property>
+		
+		
+		
 	</bean>
 	<bean id="persistenceProvider" class="org.hibernate.jpa.HibernatePersistenceProvider" />
 </beans>
