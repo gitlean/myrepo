@@ -15,65 +15,65 @@ import com.xxx.pojo.Film;
 
 public class TestMyBaties extends TestCase {
 	
-	//Ö¸¶¨MyBatisÅäÖÃÎÄ¼ş
+	//æŒ‡å®šMyBatisé…ç½®æ–‡ä»¶
 	private static final String RESOURCE = "mybatis-config.xml";
 	
 	/**
-	 * ¹²6²½²Ù×÷Íê³ÉCRUD
+	 * å…±6æ­¥æ“ä½œå®ŒæˆCRUD
 	 * @throws IOException
 	 */
 	public void testBaties() throws IOException{
 		
-		//1¡¢Ö¸¶¨MyBatiesÅäÖÃÎÄ¼ş
+		//1ã€æŒ‡å®šMyBatiesé…ç½®æ–‡ä»¶
 		Reader reader = Resources.getResourceAsReader(RESOURCE);
-		//2¡¢´´½¨SqlSessionFactory()
+		//2ã€åˆ›å»ºSqlSessionFactory()
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		
 		SqlSession session = null;
 		try {
 			
-			//3¡¢»ñÈ¡SqlSession
+			//3ã€è·å–SqlSession
 			session = sessionFactory.openSession();
 			
-			//4¡¢»ñÈ¡DAO½Ó¿Ú¶ÔÏó
+			//4ã€è·å–DAOæ¥å£å¯¹è±¡
 			FilmMapper mapper = session.getMapper(FilmMapper.class);
 			
-			//5¡¢CRUD²Ù×÷
+			//5ã€CRUDæ“ä½œ
 			
-			//5.1--Ìí¼ÓÓ°Æ¬
+			//5.1--æ·»åŠ å½±ç‰‡
 			Film film = new Film();
-			film.setFname("Ğ¦°Á½­ºş");
+			film.setFname("ç¬‘å‚²æ±Ÿæ¹–");
 			mapper.insertFilm(film);
-			session.commit();//Ìí¼Ó¡¢ĞŞ¸Ä¡¢É¾³ı²Ù×÷×îºóĞèÒªÌá½»ÊÂÎñ
+			session.commit();//æ·»åŠ ã€ä¿®æ”¹ã€åˆ é™¤æ“ä½œæœ€åéœ€è¦æäº¤äº‹åŠ¡
 			
-			//5.2--»ñÈ¡ËùÓĞµçÓ°ĞÅÏ¢
+			//5.2--è·å–æ‰€æœ‰ç”µå½±ä¿¡æ¯
 			List<Film> filmList = mapper.getAllFilm();
 			
-			//ÏÔÊ¾ËùÓĞµçÓ°ĞÅÏ¢
+			//æ˜¾ç¤ºæ‰€æœ‰ç”µå½±ä¿¡æ¯
 			for(Film filmObj : filmList){
 				
-				System.out.println("µçÓ°ID£º" + filmObj.getId() + " µçÓ°Ãû£º" + filmObj.getFname());
+				System.out.println("ç”µå½±IDï¼š" + filmObj.getId() + " ç”µå½±åï¼š" + filmObj.getFname());
 				
 			}
 			
-			//5.3--²éÑ¯ÅÅĞò
+			//5.3--æŸ¥è¯¢æ’åº
 			Map<String, Object> params = new HashMap<String, Object>();
 			params.put("orderKey", "id asc");
 			filmList = mapper.getAllFilmOrder(params);
-			//ÏÔÊ¾ËùÓĞµçÓ°ĞÅÏ¢
+			//æ˜¾ç¤ºæ‰€æœ‰ç”µå½±ä¿¡æ¯
 			for(Film filmObj : filmList){
 				
-				System.out.println("µçÓ°ID£º" + filmObj.getId() + " µçÓ°Ãû£º" + filmObj.getFname());
+				System.out.println("ç”µå½±IDï¼š" + filmObj.getId() + " ç”µå½±åï¼š" + filmObj.getFname());
 				
 			}
 			
-			//5.4--ĞŞ¸ÄÓ°Æ¬"Ğ¦°Á½­ºş"Îª"Ï²¾çÖ®Íõ"
+			//5.4--ä¿®æ”¹å½±ç‰‡"ç¬‘å‚²æ±Ÿæ¹–"ä¸º"å–œå‰§ä¹‹ç‹"
 			film = mapper.getFilmById(9);
-			film.setFname("Ï²¾çÖ®Íõ");
+			film.setFname("å–œå‰§ä¹‹ç‹");
 			mapper.updateFilm(film);
 			session.commit();
 			
-			//5.5--É¾³ıÓ°Æ¬"Ğ¦°Á½­ºş"£¬ÆäIDÎª9
+			//5.5--åˆ é™¤å½±ç‰‡"ç¬‘å‚²æ±Ÿæ¹–"ï¼Œå…¶IDä¸º9
 			mapper.deleteFilm(9);
 			session.commit();
 			
@@ -81,7 +81,7 @@ public class TestMyBaties extends TestCase {
 			e.printStackTrace();
 		}finally{
 			
-			//6¡¢¹Ø±ÕSqlSession
+			//6ã€å…³é—­SqlSession
 			if(session != null){
 				session.close();
 			}
