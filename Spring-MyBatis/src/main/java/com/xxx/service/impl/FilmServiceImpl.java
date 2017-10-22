@@ -8,14 +8,14 @@ import com.xxx.pojo.Film;
 import com.xxx.service.FilmService;
 
 /**
- * Ó°Æ¬ĞÅÏ¢ÒµÎñÂß¼­½Ó¿ÚÊµÏÖÀà
+ * å½±ç‰‡ä¿¡æ¯ä¸šåŠ¡é€»è¾‘æ¥å£å®ç°ç±»
  * 
  * @author HotStrong
  * 
  */
 public class FilmServiceImpl implements FilmService {
 
-	// ×¢ÈëÓ°Æ¬Mapper
+	// æ³¨å…¥å½±ç‰‡Mapper
 	@Autowired
 	private FilmMapper mapper;
 

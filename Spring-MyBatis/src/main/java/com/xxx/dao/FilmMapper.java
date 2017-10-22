@@ -5,26 +5,26 @@ import java.util.Map;
 import com.xxx.pojo.Film;
 
 /**
- * µçÓ°ĞÅÏ¢Êı¾İ·ÃÎÊ½Ó¿Ú
+ * ç”µå½±ä¿¡æ¯æ•°æ®è®¿é—®æ¥å£
  */
 public interface FilmMapper {
 
 	/**
-	 * ¹¦ÄÜ£º²éÑ¯ËùÓĞµçÓ°
+	 * åŠŸèƒ½ï¼šæŸ¥è¯¢æ‰€æœ‰ç”µå½±
 	 * 
 	 * @return
 	 */
 	public List<Film> getAllFilm();
 
 	/**
-	 * ¹¦ÄÜ£º°´±àºÅ»ñÈ¡µçÓ°
+	 * åŠŸèƒ½ï¼šæŒ‰ç¼–å·è·å–ç”µå½±
 	 * 
 	 * @return
 	 */
 	public Film getFilmById(int id);
 
 	/**
-	 * ¹¦ÄÜ£º²éÑ¯²¢ÅÅĞò
+	 * åŠŸèƒ½ï¼šæŸ¥è¯¢å¹¶æ’åº
 	 * 
 	 * @param params
 	 * @return
@@ -32,21 +32,21 @@ public interface FilmMapper {
 	public List<Film> getAllFilmOrder(Map<String, Object> params);
 
 	/**
-	 * ¹¦ÄÜ£ºÌí¼ÓÓ°Æ¬
+	 * åŠŸèƒ½ï¼šæ·»åŠ å½±ç‰‡
 	 * 
 	 * @param film
 	 */
 	public void insertFilm(Film film);
 
 	/**
-	 * ¹¦ÄÜ£ºĞŞ¸ÄÓ°Æ¬
+	 * åŠŸèƒ½ï¼šä¿®æ”¹å½±ç‰‡
 	 * 
 	 * @param film
 	 */
 	public void updateFilm(Film film);
 
 	/**
-	 * ¹¦ÄÜ£ºÉ¾³ıÓ°Æ¬
+	 * åŠŸèƒ½ï¼šåˆ é™¤å½±ç‰‡
 	 * 
 	 * @param id
 	 */

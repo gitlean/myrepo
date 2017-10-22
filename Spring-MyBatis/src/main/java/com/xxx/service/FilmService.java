@@ -5,7 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xxx.pojo.Film;
 
 /**
- * ӰƬ��Ϣҵ���߼��ӿ�
+ * 影片信息业务逻辑接口
  * 
  * @author HotStrong
  * 
@@ -13,7 +13,7 @@ import com.xxx.pojo.Film;
 public interface FilmService {
 
 	/**
-	 * ����һ��ӰƬ
+	 * 添加一部影片
 	 * 
 	 * @param film
 	 */
@@ -21,7 +21,7 @@ public interface FilmService {
 	public void insertFilm(Film film);
 
 	/**
-	 * �޸�һ��ӰƬ����Ϣ
+	 * 修改一部影片的信息
 	 * 
 	 * @param film
 	 */
@@ -29,7 +29,7 @@ public interface FilmService {
 	public void updateFilm(Film film);
 
 	/**
-	 * ͨ��ӰƬ���ɾ��һ��ӰƬ
+	 * 通过影片编号删除一部影片
 	 * 
 	 * @param filmId
 	 */
@@ -37,7 +37,7 @@ public interface FilmService {
 	public void deleteFilm(int filmId);
 
 	/**
-	 * ͨ��ӰƬ��Ż�ȡһ��ӰƬ
+	 * 通过影片编号获取一部影片
 	 * 
 	 * @param filmId
 	 * @return
@@ -45,7 +45,7 @@ public interface FilmService {
 	public Film getFilmById(int filmId);
 
 	/**
-	 * ��ȡ���е�ӰƬ
+	 * 获取所有的影片
 	 * 
 	 * @return
 	 */

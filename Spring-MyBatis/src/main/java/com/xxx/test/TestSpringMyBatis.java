@@ -11,15 +11,15 @@ import com.xxx.service.FilmService;
 import junit.framework.TestCase;  
  
 /** 
- * ²âÊÔSpringÕûºÏMyBatis 
+ * æµ‹è¯•Springæ•´åˆMyBatis 
  * @author HotStrong 
  * 
  */  
 public class TestSpringMyBatis extends TestCase {  
       
-    //SpringÕûºÏMyBatisÏà¹ØÅäÖÃÎÄ¼ş  
+    //Springæ•´åˆMyBatisç›¸å…³é…ç½®æ–‡ä»¶  
     //private String[] configFiles = {"applicationContext-mybatis.xml", "applicationContext-services.xml"};  
-    //´´½¨SpringÓ¦ÓÃÉÏÏÂÎÄ  
+    //åˆ›å»ºSpringåº”ç”¨ä¸Šä¸‹æ–‡  
     //private ApplicationContext context =  new ClassPathXmlApplicationContext(configFiles);  
       
 	
@@ -28,34 +28,34 @@ public class TestSpringMyBatis extends TestCase {
     
     public void testFilm(){  
           
-        //»ñÈ¡Ó°Æ¬ÒµÎñÂß¼­¶ÔÏó  
+        //è·å–å½±ç‰‡ä¸šåŠ¡é€»è¾‘å¯¹è±¡  
         FilmService filmService = (FilmService)context.getBean("filmService");  
           
         try {  
         	
-            /*ÒÔÏÂÎªÓ°Æ¬ÒµÎñÂß¼­²Ù×÷*/  
+            /*ä»¥ä¸‹ä¸ºå½±ç‰‡ä¸šåŠ¡é€»è¾‘æ“ä½œ*/  
               
-            //1¡¢Ìí¼ÓÒ»²¿Ó°Æ¬  
+            //1ã€æ·»åŠ ä¸€éƒ¨å½±ç‰‡  
             Film film = new Film();  
-            film.setFname("¹¦·òĞÜÃ¨2");//ÉèÖÃÆ¬Ãû  
-            filmService.insertFilm(film);//Ìí¼ÓÓ°Æ¬  
+            film.setFname("åŠŸå¤«ç†ŠçŒ«2");//è®¾ç½®ç‰‡å  
+            filmService.insertFilm(film);//æ·»åŠ å½±ç‰‡  
               
-            //2¡¢ĞŞ¸ÄÓ°Æ¬ĞÅÏ¢  
-            //ÏÈ»ñÈ¡´ıĞŞ¸ÄµÄÓ°Æ¬ĞÅÏ¢  
-            film = filmService.getFilmById(9);//9Îª¹¦·òĞÜÃ¨2µÄÓ°Æ¬±àºÅ  
-            //ĞŞ¸ÄÓ°Æ¬Ãû³Æ  
-            film.setFname("¹¦·òĞÜÃ¨3");  
-            //ĞŞ¸Ä²Ù×÷  
+            //2ã€ä¿®æ”¹å½±ç‰‡ä¿¡æ¯  
+            //å…ˆè·å–å¾…ä¿®æ”¹çš„å½±ç‰‡ä¿¡æ¯  
+            film = filmService.getFilmById(9);//9ä¸ºåŠŸå¤«ç†ŠçŒ«2çš„å½±ç‰‡ç¼–å·  
+            //ä¿®æ”¹å½±ç‰‡åç§°  
+            film.setFname("åŠŸå¤«ç†ŠçŒ«3");  
+            //ä¿®æ”¹æ“ä½œ  
             filmService.updateFilm(film);  
               
-            //3¡¢É¾³ı"¹¦·òĞÜÃ¨3"£¬Æä±àºÅÎª9  
+            //3ã€åˆ é™¤"åŠŸå¤«ç†ŠçŒ«3"ï¼Œå…¶ç¼–å·ä¸º9  
             filmService.deleteFilm(9); 
             
-            //4¡¢ÏÔÊ¾ËùÓĞµçÓ°ĞÅÏ¢  
+            //4ã€æ˜¾ç¤ºæ‰€æœ‰ç”µå½±ä¿¡æ¯  
             List<Film> filmList = filmService.getAllFilm();  
             for(Film filmObj : filmList){  
                   
-                System.out.println("µçÓ°ID£º" + filmObj.getId() + " µçÓ°Ãû£º" + filmObj.getFname());  
+                System.out.println("ç”µå½±IDï¼š" + filmObj.getId() + " ç”µå½±åï¼š" + filmObj.getFname());  
             }  
               
         } catch (Exception e) {  
@@ -63,4 +63,4 @@ public class TestSpringMyBatis extends TestCase {
         }  
          
     }  
-}  
+} 
