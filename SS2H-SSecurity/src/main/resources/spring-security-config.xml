@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:sec="http://www.springframework.org/schema/security" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
@@ -16,20 +15,21 @@
 			access="ROLE_ADMIN,ROLE_UPDATE_FILM,ROLE_DELETE_FILM,ROLE_ADD_FILM" />
 
 
+		<!-- 登录表单设置 -->
+		<sec:form-login login-page="/login.jsp"
+			authentication-failure-url="/login.jsp?error=true"
+			authentication-success-handler-ref="myAuthencticationSuccessHandler" />
 
 		<!-- 设置登录过滤器 -->
+		<!-- 这里设置了表单认证的filter，filter内指定了AuthencticationSuccessHandler(认证成功后的处理)，此时 sec:form-login中指定的authentication-success-handler-ref等元素无效-->
 		<sec:custom-filter before="FORM_LOGIN_FILTER"
 			ref="authenticationProcessingFilter" />
 
 
-		<!-- 登录表单设置 -->
-		<sec:form-login login-page="/login.jsp"
-			default-target-url="/manager/films.jsp" authentication-failure-url="/login.jsp?error=true" />
-
 		<!-- 登出操作后跳转到该页面 -->
 		<sec:logout logout-success-url="/loggedout.jsp"
 			delete-cookies="JSESSIONID" />
-			
+
 		<sec:remember-me />
 
 		<!-- SESSION超时后跳转到该页面 -->
@@ -40,10 +40,8 @@
 	<sec:authentication-manager alias="authenticationManager">
 		<sec:authentication-provider>
 
-			<!-- 直接使用SQL语句查询登录帐号对应权限， 
-			users-by-username-query：查询登录用户是否存在 
-			authorities-by-username-query：查询登录用户权限(登录用户可以不属于任何组，从t_user_role表中获取权限) 
-			group-authorities-by-username-query：查询登录用户所在组的权限 -->
+			<!-- 直接使用SQL语句查询登录帐号对应权限， users-by-username-query：查询登录用户是否存在 authorities-by-username-query：查询登录用户权限(登录用户可以不属于任何组，从t_user_role表中获取权限) 
+				group-authorities-by-username-query：查询登录用户所在组的权限 -->
 			<sec:jdbc-user-service data-source-ref="dataSource"
 				group-authorities-by-username-query="SELECT g.id,g.groupname,role.role  
                              FROM t_group AS g   
@@ -72,21 +70,22 @@
 	</bean>
 
 	<!-- 定制登录过滤器 -->
+	<!-- 定义过滤器时，需指定  authentication-manager 元素指明的  AuthenticationManager  （用来认证的管理器，包含  UserDetailService之类）-->
 	<bean id="authenticationProcessingFilter"
 		class="com.xxx.security.LoginUsernamePasswordAuthenticationFilter">
 		<property name="authenticationSuccessHandler" ref="loginSuccessHandler"></property>
 		<property name="authenticationFailureHandler" ref="authenticationFailureHandler"></property>
 		<property name="authenticationManager" ref="authenticationManager"></property>
 	</bean>
-	
-	<!-- 认证成功时  处理类 -->
+
+	<!-- 认证成功时 处理类 -->
 	<bean id="loginSuccessHandler" class="com.xxx.security.LoginSuccessHandler">
 		<property name="defaultTargetUrl">
 			<!-- 登录成功后转发到该页面 -->
 			<value>/manager/films.jsp</value>
 		</property>
 	</bean>
-	
+
 	<!-- 认证失败时 处理类 -->
 	<bean id="authenticationFailureHandler"
 		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
@@ -96,5 +95,8 @@
 		</property>
 	</bean>
 
+
+	<bean id="myAuthencticationSuccessHandler"
+		class="com.xxx.security.handler.MyAuthencticationSuccessHandler" />
 
 </beans>  
