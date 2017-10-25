@@ -37,6 +37,7 @@
 		</sec:session-management>
 	</sec:http>
 
+
 	<sec:authentication-manager alias="authenticationManager">
 		<sec:authentication-provider>
 

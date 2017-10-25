@@ -3,6 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:applicationContext.xml,classpath*:spring-security-config.xml</param-value>
@@ -11,10 +12,19 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	
+	<!-- logback-begin -->
+	<context-param>
+		<param-name>logbackConfigLocation</param-name>
+		<param-value> classpath:logback.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
+	</listener>
+	<!-- logback-end -->
+
 	<!-- 配置Spring Security -->
 	<!-- 需配置在structs filter前面 -->
-	<!-- http://fay19860916.blog.163.com/blog/static/1186491192010105111510598/  -->
+	<!-- http://fay19860916.blog.163.com/blog/static/1186491192010105111510598/ -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -23,7 +33,7 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
 	<!-- structs2 -->
 	<filter>
 		<filter-name>struts2</filter-name>
