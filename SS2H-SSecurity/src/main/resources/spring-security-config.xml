@@ -5,6 +5,7 @@
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 	<!-- 这里进行配置 -->
+	<!-- 一个http元素实际对应着一个filterChain ,且spring security有默认顺序，自己也可以自定义 -->
 	<sec:http>
 		<!-- 不拦截login.jsp -->
 		<sec:intercept-url pattern="/login.jsp*"
@@ -22,8 +23,11 @@
 
 		<!-- 设置登录过滤器 -->
 		<!-- 这里设置了表单认证的filter，filter内指定了AuthencticationSuccessHandler(认证成功后的处理)，此时 sec:form-login中指定的authentication-success-handler-ref等元素无效-->
+		<!-- 上面理解错了，是因为authenticationProcessingFilter指定了一个用于login——filter的filter；在传统之前已经做了验证判断(截胡) -->
+		<!--  
 		<sec:custom-filter before="FORM_LOGIN_FILTER"
 			ref="authenticationProcessingFilter" />
+		-->
 
 
 		<!-- 登出操作后跳转到该页面 -->
@@ -40,7 +44,6 @@
 
 	<sec:authentication-manager alias="authenticationManager">
 		<sec:authentication-provider>
-
 			<!-- 直接使用SQL语句查询登录帐号对应权限， users-by-username-query：查询登录用户是否存在 authorities-by-username-query：查询登录用户权限(登录用户可以不属于任何组，从t_user_role表中获取权限) 
 				group-authorities-by-username-query：查询登录用户所在组的权限 -->
 			<sec:jdbc-user-service data-source-ref="dataSource"
