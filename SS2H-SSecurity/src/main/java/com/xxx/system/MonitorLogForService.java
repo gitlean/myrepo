@@ -11,10 +11,14 @@ import java.lang.annotation.RetentionPolicy;
  * @author john
  *
  */
-@Retention(RetentionPolicy.CLASS)
-@Target({ElementType.CONSTRUCTOR, ElementType.METHOD})
+
+
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
 public @interface MonitorLogForService {
-	
-	public int id=1234;
+	public String module() default "";
+	public String operation() default "";
+	public String type() default "";
+	public boolean fg() default false;
 
 }

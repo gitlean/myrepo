@@ -13,6 +13,12 @@ import com.xxx.dao.FilmDao;
 import com.xxx.entity.Film;
 import com.xxx.system.MyService;
 
+/**
+ * 测试AspectJ
+ * @author john
+ * @date   2017年11月3日
+ * @description
+ */
 public class MainApp2 {
 
 	// private Logger logger = LoggerFactory.getLogger(MainApp.class);
@@ -25,9 +31,9 @@ public class MainApp2 {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		MyService myService= context.getBean(MyService.class);
-		myService.doSth("AAAAA");
+		//myService.doSth("AAAAA");
 		//myService.doSth2();
-
+		myService.doSthXX("AAAAA");
 	}
 
 }

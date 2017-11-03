@@ -13,9 +13,10 @@ public class MyService {
 	public void doSth(String str){
 		System.out.println("do sth ..."+str);
 	}
-
-	public void doSth2(){
-		System.out.println("do sth ...");
+	
+	@MonitorLogForService(module="a",type="Hello")
+	public void doSthXX(String str){
+		System.out.println("do sth ..."+str);
 	}
 	
 }
