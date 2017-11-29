@@ -15,8 +15,8 @@ public class TestMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		// MyBean bean1=SpringContextHelper.getBean(MyBean.class);
-		// bean1.saySth("Hello!");
+		 MyBean bean1=SpringContextHelper.getBean(MyBean.class);
+		 bean1.saySth("Hello!");
 		//
 		// AyBean bean2=(AyBean) SpringContextHelper.getBean("ayBean");
 		// bean2.dosth("China");

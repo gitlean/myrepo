@@ -9,7 +9,7 @@ public class SpringContextHelper implements ApplicationContextAware {
 	static ApplicationContext context;
 
 	public void setApplicationContext(ApplicationContext context) throws BeansException {
-		SpringContextHelper.context = context;
+		SpringContextHelper.context = context;  //这里不能用this.context = context
 	}
 
 	public static ApplicationContext getApplicationContext() {
