@@ -1,0 +1,23 @@
+SpringMVC +JACKSON  实现 RESTful API
+
+
+
+
+参考     为dataservice做的dataservice_Baffle框架
+
+
+
+http://localhost:8080/springmvc-jackson-rest/rest/demo/path/Tom/123456
+
+
+
+*********************************************************************************************
+SpringMVC实现的RESTful API 和CXF实现的RESTful WebService有什么区别与联系？
+
+
+*********************************************************************************************
+http://www.cnblogs.com/firstdream/p/5575928.html         very important
+几种流行Webservice框架性能对比
+
+
+
