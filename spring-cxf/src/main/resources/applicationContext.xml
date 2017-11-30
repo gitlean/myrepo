@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	   http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+	   http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<!-- Autiwired -->
+	<context:annotation-config />
+
+	<context:component-scan base-package="com" />
+
+
+
+	<!-- 接口定义 wsdlLocation为接口指定wsdl,可以用JDK自带工具wsgen生成，则实现类需要加@WebService和@WebMethod，否则不需要添加 
+		wsgen.exe -cp . com.service.demo.impl.HelloWorldImpl -wsdl -->
+	<!-- 
+	<jaxws:endpoint id="myService"
+		implementor="com.isoft.ws.service.imp.IMyServiceImp" address="/MyService"
+		wsdlLocation="classpath:wsdl//My_Service.wsdl" />
+	 -->
+
+
+
+
+
+<!--  
+
+	<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+
+
+	<jaxrs:server id="rest_zjgServiceMock" address="/zjgServiceMock">
+		<jaxrs:serviceBeans>
+			<ref bean="zjgServiceMock" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+	</jaxrs:server>
+
+	<jaxrs:server id="rest_zjgService" address="/ycService">
+		<jaxrs:serviceBeans>
+			<ref bean="zjgService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+	</jaxrs:server>
+-->
+
+</beans>
