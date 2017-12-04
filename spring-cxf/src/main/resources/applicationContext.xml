@@ -26,11 +26,36 @@
 		implementor="com.isoft.ws.service.imp.IMyServiceImp" address="/MyService" />
 
 
-	<!-- <bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" 
-		/> <jaxrs:server id="rest_zjgServiceMock" address="/zjgServiceMock"> <jaxrs:serviceBeans> 
-		<ref bean="zjgServiceMock" /> </jaxrs:serviceBeans> <jaxrs:providers> <ref 
-		bean="jsonProvider" /> </jaxrs:providers> </jaxrs:server> <jaxrs:server id="rest_zjgService" 
-		address="/ycService"> <jaxrs:serviceBeans> <ref bean="zjgService" /> </jaxrs:serviceBeans> 
-		<jaxrs:providers> <ref bean="jsonProvider" /> </jaxrs:providers> </jaxrs:server> -->
+		<!-- ***************************************************************************** -->
+
+	<!-- RESTful services 接口 -->
+	<!-- ++++++++++++++ -->
+	<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+	<jaxrs:server id="mock" address="/restServiceMock">
+		<jaxrs:serviceBeans>
+			<!-- Spring Bean 需注册 -->
+			<ref bean="IServiceMock" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+	</jaxrs:server>
+
+	<!-- ++++++++++++++ -->
+
+	<jaxrs:server id="restfulServer" address="/restMock">
+		<jaxrs:inInterceptors>
+		</jaxrs:inInterceptors>
+		<jaxrs:serviceBeans>
+			<bean class="com.isoft.rs.service.SurpolicyEntrence"></bean>
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="json" value="application/json" />
+			<entry key="xml" value="application/xml" />
+		</jaxrs:extensionMappings>
+		<jaxrs:languageMappings>
+			<entry key="en" value="en-gb" />
+		</jaxrs:languageMappings>
+	</jaxrs:server>
 
 </beans>
