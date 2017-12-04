@@ -13,20 +13,21 @@
 	<!-- Autiwired -->
 	<context:annotation-config />
 
-	<context:component-scan base-package="com" />
+	<context:component-scan base-package="com.isoft.rs" />
+	<context:component-scan base-package="com.isoft.ws" />
 
 	<!-- 接口定义 wsdlLocation为接口指定wsdl,可以用JDK自带工具wsgen生成，则实现类需要加@WebService和@WebMethod，否则不需要添加 
 		wsgen.exe -cp . com.service.demo.impl.HelloWorldImpl -wsdl -->
 	<jaxws:endpoint id="hwbean"
 		implementor="com.isoft.ws.service.imp.HelloServiceImpl" address="/helloWorld" />
-	<!-- http://localhost:8080/spring-cxf/ws/helloWorld?wsdl- -->
+	
 
 
 	<jaxws:endpoint id="myService"
 		implementor="com.isoft.ws.service.imp.IMyServiceImp" address="/MyService" />
 
 
-		<!-- ***************************************************************************** -->
+	<!-- ***************************************************************************** -->
 
 	<!-- RESTful services 接口 -->
 	<!-- ++++++++++++++ -->

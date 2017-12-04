@@ -20,6 +20,18 @@
 		<fastjson.version>1.2.41</fastjson.version>
 	</properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 
 		<!-- spring begin -->
@@ -64,7 +76,7 @@
 
 
 		<!-- spring end -->
-		
+
 		<!-- spring mvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -84,28 +96,30 @@
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
-		
+
 		<!-- Restful WebService需要 -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-rs-extension-providers</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
-		<!-- 
 
-		 
+
+		<!--Rest客户端依赖jar   org.apache.cxf.jaxrs.client.WebClient-->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-rs-client</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
 		
+		<!--  
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http-jetty</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
 		-->
+		
 		<!-- cxf end -->
 
 
@@ -293,7 +307,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
-		
+
 		<!-- jackson jar -->
 		<!-- jackson-databind需要引用另外两个包，所以如果项目中需要jackson-databind，则只需要加入它的dependency就行了，其他两个会自动引入 -->
 		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> 

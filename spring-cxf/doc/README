@@ -14,3 +14,8 @@ JAX-WS  和  CXF关系
 http://localhost:8080/spring-cxf/ws/
 
 
+http://localhost:8080/spring-cxf/ws/restServiceMock/getICInfo
+
+
+http://localhost:8080/spring-cxf/ws/restMock/surpolicy/sendString/123456
+

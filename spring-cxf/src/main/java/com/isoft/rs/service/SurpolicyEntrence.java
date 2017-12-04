@@ -35,7 +35,8 @@ public class SurpolicyEntrence {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String sendStringParam(@PathParam("input") String input) {
 		System.out.println("接收的参数： \r\n" + input);
-		String tReturn = "成功返回";
+		//String tReturn = "成功返回";
+		String tReturn = "success";
 		return tReturn;
 
 	}
