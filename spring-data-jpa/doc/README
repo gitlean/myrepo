@@ -6,5 +6,5 @@ Spring Data JPA 其实并不依赖于 Spring 框架
 
 
 
-
+Spring Data Jpa是一个DAO层框架
 

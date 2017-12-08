@@ -5,7 +5,7 @@ import org.springframework.data.repository.Repository;
 
 import footmark.springdata.jpa.domain.UserInfo;
 
-@org.springframework.stereotype.Repository
+//@org.springframework.stereotype.Repository
 public interface UserDaoImpl extends Repository<UserInfo, Integer> {
 	public UserInfo save(UserInfo user);
 
