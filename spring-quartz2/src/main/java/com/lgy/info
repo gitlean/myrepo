@@ -1,0 +1,13 @@
+
+1.spring自带的定时任务功能，基于注解和xml配置
+
+spring配置文件
+<!-- task任务扫描注解 -->
+<task:annotation-driven />
+
+
+@Scheduled是spring的一个注解类，cron是定时表达式。
+
+--------------------
+
+

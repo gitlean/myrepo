@@ -1,0 +1,18 @@
+http://m.blog.csdn.net/qq_31105311/article/details/50232797
+
+
+   http://blog.csdn.net/defonds/article/details/49496895
+
+
+---与spring轻度集成
+
+与spring-quartz2相比，静态调度Job，
+
+譬如：要改变Job的 cron表达式，则需程序重启
+
+
+
+
+
+
+

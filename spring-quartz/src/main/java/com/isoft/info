@@ -1,0 +1,4 @@
+
+与spring-quartz2相比，静态调度Job，
+
+譬如：要改变Job的 cron表达式，则需程序重启

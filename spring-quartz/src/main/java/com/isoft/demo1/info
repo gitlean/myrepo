@@ -1,0 +1,1 @@
+第一种，作业类继承自特定的基类：org.springframework.scheduling.quartz.QuartzJobBean。
