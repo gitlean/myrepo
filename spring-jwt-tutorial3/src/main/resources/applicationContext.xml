@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+	<!-- enable autowire -->
+	<context:annotation-config />
+
+	<!-- (Annotation方式配置services)enable component scanning (beware that this 
+		does not enable mapper scanning!) -->
+	<context:component-scan base-package="com" />
+
+
+
+	<!--Spring3.1开始的注解 HandlerMapping -->
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+
+	</bean>
+
+	<!-- ********************************************************************* -->
+
+
+	<!--json 和 HttpMessage Converter -->
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- String 和 HttpMessage Converter -->
+	<bean id="stringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter" />
+
+
+	<!--Spring3.1开始的注解 HandlerAdapter -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<!-- <ref bean="marshallingHttpMessageConverter" /> -->
+				<ref bean="stringHttpMessageConverter" />
+				<ref bean="mappingJacksonHttpMessageConverter" />
+
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- ********************************************************************* -->
+	<!-- 只要 HandlerMapping  和   HandlerAdapter  可以吗-->
+	
+
+	<!-- ??? -->
+	<bean id="contentNegotiationManager"
+		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+				<entry key="html" value="text/html" />
+			</map>
+		</property>
+	</bean>
+
+
+
+	<!-- REST Client -->
+	
+	<!-- https://www.cnblogs.com/coderland/p/5903000.html -->
+	<!-- RestTemplate类似 jdbcTemplate -->
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>
+				<!-- <ref bean="marshallingHttpMessageConverter" /> -->
+				<ref bean="mappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- ******************************************************************** -->
+
+	<!-- 配置打开允许矩阵请求格式  非必需 -->
+	<!-- 
+	<mvc:annotation-driven enable-matrix-variables="true" />
+	 -->
+	<mvc:interceptors>    
+	    <mvc:interceptor>    
+	        <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->  
+	        <mvc:mapping path="/**" />  
+	        <!-- /register 和 /login 不需要拦截-->  
+	        <mvc:exclude-mapping path="/register" />
+	        <mvc:exclude-mapping path="/login" />
+	        <bean class="com.isoft.inteceptor.TokenInterceptor"></bean>    
+	    </mvc:interceptor>  
+	    <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->  
+    </mvc:interceptors> 
+	 
+	 
+</beans>
