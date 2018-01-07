@@ -1,0 +1,36 @@
+https://www.cnblogs.com/0201zcr/p/5328847.html  important
+spring security oauth2.0 实现
+没有与JWT结合
+
+
+
+http://blog.csdn.net/monkeyking1987/article/details/16828059
+Spring Security 与 Oauth2 整合 步骤 
+
+
+------------------------------------------------------------------
+
+https://www.cnblogs.com/lexiaofei/p/7028788.html
+OAuth2.0学习（2-1）Spring Security OAuth2.0 开发指南
+
+
+https://www.cnblogs.com/panie2015/p/5919731.html
+Oauth2.0 用Spring-security-oauth2 来实现
+接下来将会介绍 如何用Spring security oauth 写最少的代码和配置，用最简单的环境，自己搭建一个OAuth 的服务Demo（服务端！不是客户端！）
+------------------------------------------------------------------
+
+http://localhost:8080/spring-security-oauth
+
+
+获取access_token  URL ：
+http://localhost:8080/spring-security-oauth/oauth/token?client_id=mobile_1&client_secret=secret_1&grant_type=password&username=aa&password=aa
+
+
+这之后再拿着这个access_token去访问资源：
+http://localhost:8080/spring-security-oauth/admin?access_token=c9f0210608a54254af6f40ecbe2eff04
+
+
+
+
+
+
