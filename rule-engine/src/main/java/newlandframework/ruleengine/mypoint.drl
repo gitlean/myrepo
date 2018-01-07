@@ -1,0 +1,31 @@
+//created on: 2016-3-26
+//业务规则决策配置 by tangjie
+
+package newlandframework.ruleengine
+
+//list any import classes here.
+import newlandframework.ruleengine.UserProduct;
+import newlandframework.ruleengine.Users;
+import newlandframework.ruleengine.LuckUsers;
+
+//declare any global variables here
+
+rule "genLuckyUsersRule"
+  // dialect：该属性用来定义规则当中要使用的语言类型：mvel 和java，如果没有手工设置规则的dialect，默认使用的java 语言
+  // dialect "mvel"
+  when
+    $luck : LuckUsers()
+    $userFamilyProduct :  UserProduct( productId == UserProduct.FAIMILYPROUDCT )
+    $userVpnProduct :  UserProduct( productId == UserProduct.VPNPRODUCT )
+    $user : Users(userProduct contains $userFamilyProduct) and Users(userProduct contains $userVpnProduct)
+    eval($user.userBrand == Users.MZONE)
+  then
+    //actions
+    System.out.println("family:"+$userFamilyProduct.productId);
+    System.out.println("vpn:"+$userVpnProduct.productId);
+    System.out.println("msisdn:"+$user.msisdn);
+    
+    $luck.homeCity = $user.homeCity;
+    $luck.msisdn = $user.msisdn;
+    $luck.userId = $user.userId;
+end
