@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/cache
+        http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd  
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- enable autowire -->
+	<context:annotation-config />
+
+	<!-- (Annotation方式配置services)enable component scanning (beware that this 
+		does not enable mapper scanning!) -->
+	<context:component-scan base-package="com" />
+
+
+
+	<!-- 基于XML配置 配置Spring对Cache的支持 -->
+	<!-- 在cache命名空间下定义了一个cache:advice元素用来定义一个对于Cache的advice。其需要指定一个cache-manager属性，默认为cacheManager -->
+	<cache:advice id="cacheAdvice" cache-manager="cacheManager">
+		<cache:caching cache="xxx">
+			<cache:cacheable method="add" />
+			<!--<cache:cacheable method="minus" key="#user.id" /> -->
+		</cache:caching>
+	</cache:advice>
+
+
+
+	<!-- 配置使用的是一个SimpleCacheManager，其中包含一个名为“xxx”的ConcurrentMapCache -->
+	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+		<property name="caches">
+			<set>
+				<bean
+					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"
+					p:name="xxx" />
+			</set>
+		</property>
+	</bean>
+
+
+	<!-- 有了cache:advice之后，我们还需要引入aop命名空间，然后通过aop:config指定定义好的cacheAdvice要应用在哪些pointcut上 -->
+	<aop:config proxy-target-class="false">
+		<aop:advisor advice-ref="cacheAdvice"
+			pointcut="execution(* com.isoft.cache.Calculator2.*(..))" />
+	</aop:config>
+
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/cache
+        http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- enable autowire -->
+	<context:annotation-config />
+
+	<!-- (Annotation方式配置services)enable component scanning (beware that this 
+		does not enable mapper scanning!) -->
+	<context:component-scan base-package="com" />
+
+
+
+	<!-- 基于注解 配置Spring对Cache的支持 -->
+
+	<!-- 有一个cache-manager属性用来指定当前所使用的CacheManager对应的bean的名称，默认是cacheManager，所以当我们的CacheManager的id为cacheManager时我们可以不指定该参数，否则就需要我们指定了。 -->
+	<cache:annotation-driven />
+
+	<!-- 配置使用的是一个SimpleCacheManager，其中包含一个名为“xxx”的ConcurrentMapCache -->
+	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+		<property name="caches">
+			<set>
+				<bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="xxx" />
+			</set>
+		</property>
+	</bean>
+
+</beans>
