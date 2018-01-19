@@ -1,0 +1,23 @@
+http://blog.csdn.net/vbirdbest/article/details/72763048
+
+
+
+这里讲ehcache与spring的集成
+
+encache是一个框架
+
+----------------------------------
+区别spring cache技术
+
+
+----------------------------------
+
+
+Ehcache的默认规则取classpath根路径下的ehcache.xml文件，若该文件也不存在，则获取Ehcache对应jar包中的ehcache-failsafe.xml文件作为配置文件
+
+
+
+
+
+
+
