@@ -1,0 +1,45 @@
+
+ActiveMQ与Spring集成
+
+这里示例消息队列 异步消费 和 Pub/Sub
+
+
+
+
+参考
+http://blog.csdn.net/jiuqiyuliang/article/details/48758203#reply
+https://www.cnblogs.com/leiOOlei/p/5075402.html      --base
+http://blog.163.com/gibby_l/blog/static/83003161201481935249884/
+
+
+--------------------------------------------------------------
+
+http://localhost:8080/spring-activemq/welcome
+
+--------------------------------------------------------------
+
+http://blog.csdn.net/ytangdigl/article/details/78306568
+org.apache.xbean.spring.context.v2.XBeanNamespaceHandler
+解决办法是：lib中加入xbean-spring-4.4.jar
+
+出现该问题是在处理activemq和spring集成时出的问题。
+
+
+
+http://andyao.iteye.com/blog/234101?page=2
+activeMq依赖于 xbean-spring.jar 
+
+--------------------------------------------------------------
+
+
+
+ActiveMQ2.xml   与ActiveMQ.xml相比，增加了监听
+
+
+
+
+
+
+
+
+
