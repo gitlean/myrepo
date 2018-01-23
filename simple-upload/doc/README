@@ -1,0 +1,38 @@
+http://blog.csdn.net/philosophyatmath/article/details/43794649
+
+
+
+
+http://www.blogjava.net/qingchenghuanying/articles/390791.html    (大而全)
+文件上传下载rest实现                                                           commons.fileupload
+
+
+
+http://blog.csdn.net/shang3583091/article/details/50955328
+Apache CXF REST 文件上传，form提交和json提交。 
+
+
+----------------------------------------------------------------------------
+
+
+POST
+
+http://localhost:8080/simple-upload/ws
+
+
+
+http://localhost:8080/simple-upload/ws/file/upload
+
+
+文件名为中文    出错
+
+
+----------------------------------------------------------------------------
+
+
+http://blog.csdn.net/mhmyqn/article/details/26395743      ----基于springmvc
+springmvc RestTemplate文件上传
+
+
+
+
