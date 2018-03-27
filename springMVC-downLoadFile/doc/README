@@ -1,0 +1,11 @@
+
+下载Excel
+生成Excel，并写入response中
+
+http://localhost:8080/springMVC-downLoadFile
+
+
+http://localhost:8080/springMVC-downLoadFile/mvc/index
+
+
+
