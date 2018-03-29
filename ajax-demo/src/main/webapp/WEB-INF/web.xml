@@ -27,7 +27,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-
+	<!-- 注册中央调度器 -->
 	<servlet>
 		<description>配置SpringMVC的前端控制器</description>
 		<servlet-name>SpringMvcServlet</servlet-name>

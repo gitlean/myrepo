@@ -11,11 +11,12 @@ default-lazy-init="true">
 
 	
     <context:component-scan base-package="com.isoft.blueberry.controller"/>
-   
 
-        <!-- 当配置了<mvc:annotation-driven/>后，会自动加载org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping和
-org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter，所以如果显示的配置则需去掉配置<mvc:annotation-driven/> -->
-    <mvc:annotation-driven/>
+
+	<!-- 当配置了<mvc:annotation-driven/>后， -->
+	<!--会自动加载org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping和 
+		org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter，所以如果显示的配置则需去掉配置<mvc:annotation-driven/> -->
+	<mvc:annotation-driven />
     
 
 

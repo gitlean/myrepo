@@ -1,24 +1,50 @@
 
+原生ajax
+
 //http://localhost:8080/ajax-demo/mvc/index
 
 http://localhost:8080/ajax-demo/mvc/index.do
 
-
-
 http://localhost:8080/ajax-demo/login.html
-
-
 
 
 https://www.cnblogs.com/liujiayang/p/5775566.html
 关于Ajax的技术组成与核心原理
 
 
-
-
-
-
 web配置servlet   login
+----------------------------------------------------------------
+
+使用jquery库中ajax
+
+而jQuery则是对js代码进行封装方便我们前台代码的编写，而且它还有一个非常大的优势就是解决了浏览器的兼容问题，这也是我们使用它非常重要的原因之一。
+http://www.jb51.net/article/107655.htm
+
+
+http://localhost:8080/ajax-demo/delete.jsp
+
+
+http://localhost:8080/ajax-demo/org/doDelete
+
+
+
+http://www.w3school.com.cn/jquery/ajax_ajax.asp
+ajax() 方法通过 HTTP 请求加载远程数据。
+该方法是 jQuery 底层 AJAX 实现。简单易用的高层实现见 $.get, $.post 等。
+
+
+
+
+
+
+现在由于web.xml中配置的
+
+
+
+
+
+
+
 
 
 
