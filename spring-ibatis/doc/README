@@ -1,0 +1,30 @@
+
+https://www.cnblogs.com/cs-forget/p/6483895.html    important
+ibatis入门实例（完整）
+
+
+
+https://www.cnblogs.com/tyhJava/p/5842594.html
+iBatis简单介绍
+
+https://blog.csdn.net/intmain_rocking/article/details/41775035                new
+Maven整合Spring-MVC+IBatis
+
+-----------------------------------------------------------------
+https://blog.csdn.net/wxwzy738/article/details/16953609
+Ibatis中SqlMapClientTemplate和SqlMapClient的区别
+SqlMapClientTemplate是org.springframework.orm.ibatis下的
+
+而SqlMapClient是ibatis的
+
+SqlMapClientTemplate是SqlMapClient的封装类. 
+
+-----------------------------------------------------------------
+
+https://www.cnblogs.com/suyuan/archive/2009/11/09/1598892.html
+从IBatis2.X 移植到IBatis3.0 sqlMapConfig and sqlMap XML 配置文件升级说明
+
+http://lyb520320.iteye.com/blog/586628
+使用iBATIS3.0完成增删改查
+
+-----------------------------------------------------------------
