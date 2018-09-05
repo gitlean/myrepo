@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 从高到地低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL -->
+<!-- 日志输出规则 根据当前ROOT 级别，日志输出时，级别高于root默认的级别时 会输出 -->
+
+<!-- 属性描述 scan：性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 
+	debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<!-- 定义日志文件 输入位置,注意此处的/ -->
+	<!--
+	<property name="log_dir" value="E:/logs" />
+	 -->
+	<property name="log_dir" value="${catalina.home}/logs/springMVC-downLoadFile/log" />
+	
+	
+	<!-- 日志最大的历史 60天 -->
+	<property name="maxHistory" value="60"></property>
+
+
+	<!-- 控制台输出日志 -->
+	<appender name="STDOUT_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<!-- 出错日志 appender -->
+	<appender name="ERROR_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 在多数的Log工具中，级别是可以传递，例如如果指定了日志输出级别为DEBUG， 那么INFO、ERROR级别的log也会出现在日志文件。这种默认给程序的调试带来了很多的麻烦 
+			通过配置Filter 来严格控制日志输入级别 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>${log_dir}/error-log-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>${maxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- INFO 日志 appender -->
+	<appender name="INFO_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>${log_dir}/info-log-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>${maxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- DEBUG 日志 appender -->
+	<appender name="DEBUG_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		
+		<!-- 这里没有配置过滤 -->
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>${log_dir}/debug-log-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>${maxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+
+
+
+	<!-- 精确控制日志的应用范围 -->
+	<!-- 将XXX包下面的所有日志级别设为了YYY -->
+	<!-- 打印SQL输出 -->
+	<!-- 可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个loger -->
+	<logger name="java.sql.Connection" level="DEBUG" />
+	<logger name="java.sql.Statement" level="DEBUG" />
+	<logger name="java.sql.PreparedStatement" level="DEBUG" />
+
+
+	<!-- logger捕捉到则logger处理，默认不向root传 -->
+	<!-- root里可以配多个level，指定appender -->
+
+	<!-- <root>它也是<loger>元素，但是它是根loger,是所有<loger>的上级。 -->
+	<!-- 日志输出级别 -->
+	<root level="DEBUG">
+
+		<appender-ref ref="STDOUT_APPENDER" />
+		<appender-ref ref="ERROR_APPENDER" />
+		<appender-ref ref="INFO_APPENDER" />
+		<appender-ref ref="DEBUG_APPENDER" />
+
+	</root>
+</configuration>
+
+

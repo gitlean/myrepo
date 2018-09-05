@@ -1,0 +1,12 @@
+使用hibernate从db读取数据，并生成excel文件
+
+下载Excel
+生成Excel，并写入response中
+
+http://localhost:8080/springMVC-downLoadFile
+
+
+http://localhost:8080/springMVC-downLoadFile-db/mvc/index
+
+
+
