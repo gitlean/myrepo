@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+	</settings>
+	
+	<!-- 以下配置作用是为实体类定义别名,mapper中用的到 -->
+	<!-- 加入不想定义别名，怎么办? -->
+	<typeAliases>
+		<typeAlias alias="Film" type="com.isoft.entity.Film" />
+	</typeAliases>
+	 
+	
+	<mappers>
+		<mapper resource="/mapper/FilmMapper.xml"/>
+		<!-- 可以加多条 -->
+	</mappers>
+</configuration>
