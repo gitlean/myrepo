@@ -1,0 +1,10 @@
+
+
+ApplicationContextAware
+在Spring中，如果Bean对象实现了ApplicationContextAware接口,则Spring在完成Bean的初始化后,会将ApplicationContext上下文对象注入至该Bean对象中,注入方法为调用Bean的setApplicationContext方法
+
+
+
+BeanPostProcessor
+spring中基于BeanPostProcessor动态替换指定的bean
+

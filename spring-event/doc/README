@@ -1,0 +1,40 @@
+
+Spring事件
+
+
+
+http://enjiex.iteye.com/blog/1070094        important
+Spring事件机制
+
+Java提供了事件机制，在使用spring的时候，我们可以把普通的java事件操作定义为bean集成到bean容器中，但还有一种更方便的方式，即使用spring已集成的事件支持。
+
+
+http://blog.csdn.net/it_man/article/details/8440737 
+spring发布和接收定制的事件(spring事件传播)
+
+
+http://geek.csdn.net/news/detail/65193
+趣谈spring事件:业务解耦与异步调用
+
+-----------------------------------------------------
+ApplicationEvent         ApplicationListener
+
+
+
+
+ApplicationEventPublisherAware     ApplicationContextAware
+
+
+
+
+ApplicationEventPublisher                ApplicationContext(实现了ApplicationEventPublisher接口)
+（publishEvent(ApplicationEvent)）   （publishEvent(ApplicationEvent)）
+
+
+
+ApplicationListener. onApplicationEvent(ApplicationEvent event)
+
+
+
+
+
