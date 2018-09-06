@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.isoft</groupId>
+	<artifactId>simple-liquibase</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<build>
+		<plugins>
+			<!-- 此插件支持从properties中读取配置信息 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>${basedir}/src/main/resources/conf/geoq.properties</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>3.0.8</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.liquibase</groupId>
+						<artifactId>liquibase-core</artifactId>
+						<version>3.0.8</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<phase>process-resources</phase>
+						<configuration>
+							<!-- changeLogFile参数指定liquibase数据库变更日志文件 -->
+							<changeLogFile>src/main/resources/liquiabse/business_table.xml</changeLogFile>
+							<driver>${jdbc.driverClassName}</driver>
+							<url>${jdbc.url}</url>
+							<username>${jdbc.username}</username>
+							<password>${jdbc.password}</password>
+						</configuration>
+						<goals>
+							<goal>update</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

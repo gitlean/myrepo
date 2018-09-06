@@ -1,0 +1,32 @@
+
+http://blog.csdn.net/zheng0518/article/details/65631205
+
+http://blog.csdn.net/zhongzh86/article/details/48730083
+
+
+-------------------
+
+
+create database liqiubase;
+
+
+-------------------
+
+
+changelog支持多种格式，主要有XML/JSON/YAML/SQL，其中XML/JSON/YAML除了具体格式语法不同，节点配置很类似
+
+
+一个<changeSet>标签对应一个变更集
+
+
+针对changLog是SQL
+liquibase --changeLogFile=D:/test/Release0003.sql --driver=com.mysql.jdbc.Driver --classpath=D:/m3/repository/mysql/mysql-connector-java/5.1.43/mysql-connector-java-5.1.43.jar --url="jdbc:mysql://localhost:3306/liqiubase" --username=root --password=secs123 update
+
+针对changLog是XML
+liquibase --changeLogFile=D:/test/changeLog.xml --driver=com.mysql.jdbc.Driver --classpath=D:/m3/repository/mysql/mysql-connector-java/5.1.43/mysql-connector-java-5.1.43.jar --url="jdbc:mysql://localhost:3306/liqiubase" --username=root --password=secs123 update
+
+
+
+
+
+

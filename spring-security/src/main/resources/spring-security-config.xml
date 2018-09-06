@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<!-- 这里进行配置 -->
+	<!-- 一个http元素实际对应着一个filterChain ,且spring security有默认顺序，自己也可以自定义 -->
+	<security:http auto-config="true">
+		<!-- 表示匿名用户可以访问 -->
+		<security:intercept-url pattern="/login.jsp*"
+			access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<!-- 登录表单设置 -->
+		<security:form-login login-page="/login.jsp"
+			authentication-success-handler-ref="myAuthencticationSuccessHandler"
+			authentication-failure-url="/login.jsp?error=true" />
+
+		<security:intercept-url pattern="/**" access="ROLE_USER" />
+
+		<!-- 设置自定义过滤器 -->
+		<!-- 这个过滤器可以是一个普通的过滤器 -->
+		<security:custom-filter before="FORM_LOGIN_FILTER"
+			ref="myProcessingFilter" />
+
+		<!-- 登出操作后跳转到该页面 -->
+		<security:logout logout-success-url="/loggedout.jsp"
+			delete-cookies="JSESSIONID" />
+	</security:http>
+
+
+	<!-- 有了权限控制的规则了后，接下来我们需要定义一个AuthenticationManager用于认证。 -->
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider>
+			<!-- InMemoryDaoImpl -->
+			<security:user-service>
+				<security:user name="user" password="user"
+					authorities="ROLE_USER" />
+				<security:user name="admin" password="admin"
+					authorities="ROLE_USER, ROLE_ADMIN" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+
+	<bean id="myAuthencticationSuccessHandler" class="com.isoft.handler.AuthenticationSuccessHandlerImpl" />
+
+	<bean id="myProcessingFilter" class="com.isoft.filters.MyProcessingFilter" />
+
+
+</beans>  

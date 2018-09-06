@@ -1,0 +1,26 @@
+
+https://www.cnblogs.com/xwdreamer/archive/2011/11/10/2296939.html          important
+Spring Web Flow 提供了描述业务流程的抽象能力
+并非所有情形都适用 Spring Web Flow
+可以看出， Spring Web Flow 所着力解决的问题即是客户端与服务器的对话（ conversation ）问题，这个范围比 request 要长，而比 session 要短。
+Web Flow 作为一个单独的概念被提出来，也可算是 Spring Web Flow 的一大亮点。
+目前大多数 Web MVC 框架都把重点把在各种 controller 和形形色色的 view 技术上面，对 Web 应用流程本身的关注是不够的， Web Flow 的提出就提供了一层抽象，设计者就可以从 Web Flow 抽象层面来进行设计、开发。
+
+
+
+https://www.cnblogs.com/Hdaydayup/p/6796488.html
+
+
+http://blog.csdn.net/fox9916/article/details/72584014
+
+
+
+----------------------------------------------------------
+
+
+
+
+
+
+
+

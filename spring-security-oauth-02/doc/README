@@ -1,0 +1,27 @@
+https://www.cnblogs.com/0201zcr/p/5328847.html  important
+spring security oauth2.0 实现
+没有与JWT结合
+
+
+http://blog.csdn.net/monkeyking1987/article/details/16828059
+Spring Security 与 Oauth2 整合 步骤 
+
+与spring-security-oauth相比
+token持久化到数据库里
+
+----------------------------------------------------------
+http://localhost:8080/spring-security-oauth
+
+
+获取access_token  URL ：
+http://localhost:8080/spring-security-oauth-02/oauth/token?client_id=mobile_1&client_secret=secret_1&grant_type=password&username=aa&password=aa
+
+
+这之后再拿着这个access_token去访问资源：
+http://localhost:8080/spring-security-oauth-02/admin?access_token=ee730849767a41bda52f3498a45d9162
+
+
+
+
+
+

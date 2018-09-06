@@ -1,0 +1,59 @@
+package com.isoft.demo4.utils;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+
+/**
+ * 
+ * @author john
+ * @date 2018年1月10日
+ * @time 下午4:31:49
+ * @describe:Gizp压缩与解压缩工具类
+ */
+public class GzipUtils {
+	public static byte[] gzip(byte[] val) throws IOException {
+
+		ByteArrayOutputStream bos = new ByteArrayOutputStream(val.length);
+		GZIPOutputStream gos = null;
+		try {
+			gos = new GZIPOutputStream(bos);
+			gos.write(val, 0, val.length);
+			gos.finish();
+			gos.flush();
+			bos.flush();
+			val = bos.toByteArray();
+		} finally {
+			if (gos != null)
+				gos.close();
+			if (bos != null)
+				bos.close();
+		}
+		return val;
+	}
+
+	public static byte[] unGzip(byte[] buf) throws IOException {
+		GZIPInputStream gzi = null;
+		ByteArrayOutputStream bos = null;
+		try {
+			gzi = new GZIPInputStream(new ByteArrayInputStream(buf));
+			bos = new ByteArrayOutputStream(buf.length);
+			int count = 0;
+			byte[] tmp = new byte[2048];
+			while ((count = gzi.read(tmp)) != -1) {
+				bos.write(tmp, 0, count);
+			}
+			buf = bos.toByteArray();
+		} finally {
+			if (bos != null) {
+				bos.flush();
+				bos.close();
+			}
+			if (gzi != null)
+				gzi.close();
+		}
+		return buf;
+	}
+}

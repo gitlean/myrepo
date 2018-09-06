@@ -1,0 +1,32 @@
+http://blog.csdn.net/sun_t89/article/details/51923017
+Spring Boot实战之Filter实现使用JWT进行接口认证
+
+
+向服务端发送认证信息（密码），验证通过后服务端返回一个token,之后用户使用该token作为登录凭证，适合于移动端和api
+
+
+
+参考2：
+http://blog.csdn.net/jackcheng_ht/article/details/52670211
+<dependency>  
+    <groupId>com.auth0</groupId>  
+    <artifactId>java-jwt</artifactId>  
+    <version>2.2.0</version>  
+</dependency>  
+
+github:https://github.com/imchenglibin/spring-web-tutorial
+
+
+
+
+
+-----------------------------------------------------
+http://localhost:9001/jwt/test/getU1
+http://localhost:9001/jwt/test/getU2
+
+
+
+
+http://localhost:9001/jwt/oauth/token
+
+

@@ -1,0 +1,24 @@
+
+问题1、
+https://blog.csdn.net/liangxun0712/article/details/78642291
+（MAC）java.lang.NoClassDefFoundError: org/bouncycastle/jce/provider/BouncyCastleProvider解决方法
+
+出现该现象主要是应为加入了jdk的第三方安全库
+
+https://blog.csdn.net/u014227715/article/details/77160846
+ <dependency>  
+        <groupId>org.bouncycastle</groupId>  
+        <artifactId>bcprov-jdk16</artifactId>  
+        <version>1.46</version>  
+ </dependency>  
+ 
+bcprov-jdk15on-159
+
+https://www.cnblogs.com/qiuxiangmuyu/p/6195215.html
+【Java密码学】使用Bouncy Castle生成数字签名、数字信封
+
+http://www.bouncycastle.org/latest_releases.html
+
+问题2、
+是否 替换 Java 密码扩展无限制权限策略文件？
+
