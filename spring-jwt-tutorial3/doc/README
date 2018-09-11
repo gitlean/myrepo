@@ -1,20 +1,25 @@
+
+1、获取JWT
 http://localhost:8080/spring-jwt-tutorial3/login?email=john&password=123456
 
-
+2、以下列三种方式访问服务，
 
 http://localhost:8080/spring-jwt-tutorial3/add?a=1&b=2
 
 
-http://localhost:8080/spring-jwt-tutorial3/add?a=1&b=2&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTUxNDMwOTc3MDYsInBheWxvYWQiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOm51bGwsXCJlbWFpbFwiOlwiam9oblwiLFwicGFzc3dvcmRcIjpcIjEyMzQ1NlwifSJ9.J225ZNppQRNpf6PGZFUx7_ZeQBYX5m-U2VKFG4DJGlQ
+http://localhost:8080/spring-jwt-tutorial3/add?a=1&b=2&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY2NTQ4NDAyNDIsInBheWxvYWQiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOm51bGwsXCJlbWFpbFwiOlwiam9oblwiLFwicGFzc3dvcmRcIjpcIjEyMzQ1NlwifSJ9.WisPrtNpJCyGdCB6bPbbqTocjmqVhAeOr7Nl4bPHC-o
 
-http://localhost:8080/spring-jwt-tutorial3/add?a=1&b=2&loginId=1&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTUxNDMwOTc3MDYsInBheWxvYWQiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOm51bGwsXCJlbWFpbFwiOlwiam9oblwiLFwicGFzc3dvcmRcIjpcIjEyMzQ1NlwifSJ9.J225ZNppQRNpf6PGZFUx7_ZeQBYX5m-U2VKFG4DJGlQ
+
+http://localhost:8080/spring-jwt-tutorial3/add?a=1&b=2&loginId=1&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY2NTQ4NDAyNDIsInBheWxvYWQiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOm51bGwsXCJlbWFpbFwiOlwiam9oblwiLFwicGFzc3dvcmRcIjpcIjEyMzQ1NlwifSJ9.WisPrtNpJCyGdCB6bPbbqTocjmqVhAeOr7Nl4bPHC-o
+//TokenInterceptor加了loginId验证
+---------------------------------------------------------------------
 
 
 
 http://blog.csdn.net/change_on/article/details/71191894      Interceptor
 告别session！ spring 集成 jwt 验证方式
 
-
+---------------------------------------------------------------------
 
 
 

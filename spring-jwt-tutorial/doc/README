@@ -11,13 +11,18 @@ http://localhost:8080/spring-jwt-tutorial/users/model
 
 
 
+
+
+1、获取jwt
 http://localhost:8080/spring-jwt-tutorial/users/login?username=imjack&password=123456
 
 {"message":"Ok","code":200,"data":{"user":{"id":1,"username":"imjack","password":"123456"},"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTc2NDg4MzI5NDksInBheWxvYWQiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiaW1qYWNrXCIsXCJwYXNzd29yZFwiOlwiMTIzNDU2XCJ9In0.nHEANeGfqwu7xteoOR9XQocgyQD3LXaLzelHTh32TgQ"}}
 
 
-http://localhost:8080/spring-jwt-tutorial/me/get_info?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTc2NDg4MzI5NDksInBheWxvYWQiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiaW1qYWNrXCIsXCJwYXNzd29yZFwiOlwiMTIzNDU2XCJ9In0.nHEANeGfqwu7xteoOR9XQocgyQD3LXaLzelHTh32TgQ
-具体业务逻辑
+
+2、具体业务逻辑
+http://localhost:8080/spring-jwt-tutorial/me/get_info?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzkyNDMzOTM1MjMsInBheWxvYWQiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiaW1qYWNrXCIsXCJwYXNzd29yZFwiOlwiMTIzNDU2XCJ9In0.DUzMTiwY_czgslmb1QZSlWdr6wCB7cSpQSO70n9hcpw
+
 
 
 
