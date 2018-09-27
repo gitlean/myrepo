@@ -1,6 +1,7 @@
 package com.isoft.rs.entity;
 import java.util.List;
 
+import javax.ws.rs.PathParam;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,10 +17,30 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "USER")
 public class UserBean {
+	
 	private String name;
+	
 	private String age;
+	
 	private UserAddress userAddress;//地址
+	
 	private List<UserPhone> phoneList ;//手机
+	
+	public UserBean(){
+		
+	}
+	
+	public UserBean(String name){
+		this.name=name;
+	}
+	public UserBean(String name,String age,UserAddress userAddress,List<UserPhone> phoneList){
+		this.name=name;
+		this.age=age;
+		this.userAddress=userAddress;
+		this.phoneList=phoneList;
+	}
+	
+	
 
 	@XmlElement(name="NAME")
 	public String getName() {

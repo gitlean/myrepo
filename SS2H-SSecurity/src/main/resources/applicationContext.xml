@@ -32,6 +32,8 @@
 	<bean id="filmAction" class="com.xxx.web.struts.action.FilmAction"
 		scope="prototype" />
 
+	<!-- ***************************************************************************** -->
+
 	<bean id="configProperties"
 		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="locations">
@@ -46,7 +48,7 @@
 		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
 		<property name="properties" ref="configProperties"></property>
 	</bean>
-
+	<!-- ***************************************************************************** -->
 
 
 	<!-- 数据源配置 -->
@@ -69,7 +71,7 @@
 
 	</bean>
 
-
+	<!-- DataSourceTransactionManager -->
 	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

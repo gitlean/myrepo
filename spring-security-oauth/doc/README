@@ -1,4 +1,4 @@
-https://www.cnblogs.com/0201zcr/p/5328847.html  important
+https://www.cnblogs.com/0201zcr/p/5328847.html    important
 spring security oauth2.0 实现
 没有与JWT结合
 
@@ -6,7 +6,16 @@ spring security oauth2.0 实现
 
 http://blog.csdn.net/monkeyking1987/article/details/16828059
 Spring Security 与 Oauth2 整合 步骤 
+分离
+数据库存储token，且参考以下两篇文章
+    http://blog.csdn.net/hxpjava1/article/details/7215030
+	http://andaily.com/spring-oauth-server/db_table_description.html
 
+
+http://blog.csdn.net/u013815546/article/details/76898524
+第一篇文章主要是讲解使用springboot搭建一个简易的授权，资源服务器
+spring security oauth2建立在spring security的基础之上
+http://blog.csdn.net/u011537073/article/details/52108369
 
 ------------------------------------------------------------------
 
@@ -20,17 +29,26 @@ Oauth2.0 用Spring-security-oauth2 来实现
 ------------------------------------------------------------------
 
 http://localhost:8080/spring-security-oauth
+aa/aa
 
+------------------
 
-获取access_token  URL ：
+1、获取access_token  URL ：
 http://localhost:8080/spring-security-oauth/oauth/token?client_id=mobile_1&client_secret=secret_1&grant_type=password&username=aa&password=aa
 
 
-这之后再拿着这个access_token去访问资源：
+2、这之后再拿着这个access_token去访问资源：
 http://localhost:8080/spring-security-oauth/admin?access_token=c9f0210608a54254af6f40ecbe2eff04
 
 
 
+bearer [bear·er || 'beərə] n. 带信人; 持有人; 持票人; 挑夫, 搬运工
+
+
+
+https://blog.csdn.net/u013815546/article/details/76898524
+
+关于oauth2，其实是一个规范，本文重点讲解spring对他进行的实现，如果你还不清楚授权服务器，资源服务器，认证授权等基础概念
 
 
 

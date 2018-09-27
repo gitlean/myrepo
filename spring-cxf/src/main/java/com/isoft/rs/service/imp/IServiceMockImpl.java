@@ -12,6 +12,7 @@ public class IServiceMockImpl implements IServiceMock {
 	public String saveAuth(String auth) {
 		// TODO Auto-generated method stub
 		//com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider p;
+		System.out.println(auth);
 		JSONObject json = new JSONObject();
 		json.put("saveAuth", "1");
 

@@ -17,6 +17,7 @@ public class MyClientWithSelector {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		call1();
 
 	}
 
@@ -46,12 +47,21 @@ public class MyClientWithSelector {
 			socketChannel3.connect(new InetSocketAddress("127.0.0.1", 9991));
 
 			// 当向Selector注册Channel时，register()方法会返回一个SelectionKey对象。这个对象包含了一些你感兴趣的属性：
-			SelectionKey key1 = socketChannel1.register(selector, SelectionKey.OP_READ);
-			SelectionKey key2 = socketChannel2.register(selector, SelectionKey.OP_READ);
-			SelectionKey key3 = socketChannel3.register(selector, SelectionKey.OP_READ);
+			
+			SelectionKey key1 = socketChannel1.register(selector, SelectionKey.OP_CONNECT);
+			SelectionKey key2 = socketChannel2.register(selector, SelectionKey.OP_CONNECT);
+			SelectionKey key3 = socketChannel3.register(selector, SelectionKey.OP_CONNECT);
 			
 			
 			//-------------------------------------------------------------------
+			
+			//阻塞到至少有一个通道在你注册的事件上就绪了。
+			int num=selector.select();
+			
+			
+			
+			System.out.println(num);
+	
 			
 
 		} catch (IOException e) {

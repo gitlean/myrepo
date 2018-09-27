@@ -28,6 +28,9 @@ public class FilmServiceImpl implements FilmService {
 	@Autowired
 	private FilmDao filmDao;
 
+	@Autowired
+	private SchoolServiceImp schoolService;
+	
 	public FilmDao getFilmDao() {
 		return filmDao;
 	}
@@ -65,10 +68,22 @@ public class FilmServiceImpl implements FilmService {
 
 	@MonitorLogForService
 	public List<Film> getAllFilm() {
-
+		
+		schoolService.saySth("Love"); //此处，  切面会被执行
+		
+		test();    //此处test()切面不会被执行；因为test()和getAllFilm()在同一个类里
   
 		return filmDao.getAllFilm();
 
 	}
+	
+	/**
+	 * 
+	 */
+	@MonitorLogForService  
+	public void test(){
+		System.out.println("Hello World!");
+	}
+	
 
 }

@@ -11,6 +11,7 @@ public class IndexController {
 	@RequestMapping(value = "/index")
 	public String index(HttpServletRequest request) {
 
+		System.out.println("IndexController----------->");
 		return "index";   // /WEB-INF/jsp/index.jsp
 
 	}

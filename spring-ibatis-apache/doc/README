@@ -11,3 +11,10 @@ https://blog.csdn.net/chow__zh/article/details/7709048
 使用iBATIS3.0完成增删改查、 使用iBATIS3.0注解完成对数据库的简单操作
 2012年07月02日 16:39:28
 https://blog.csdn.net/sd_tz_wzg/article/details/17005507
+
+
+
+http://blog.sina.com.cn/s/blog_40cb69660101bvkz.html
+iBatis与MyBatis区别
+由于 DTD 约束发生变化,根元素也由原来的 <sqlMap> 调整为 <mapper>。
+

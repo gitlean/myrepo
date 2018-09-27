@@ -15,9 +15,12 @@
 		authentication-manager-ref="oauth2AuthenticationManager">
 		<intercept-url pattern="/oauth/token" access="IS_AUTHENTICATED_FULLY" />     <!--  可以访问的角色名称，如果需要拦截，需要实现UserDetails接口，实现getAuthorities（）方法-->
 		<anonymous enabled="false" />
+		<!-- 成功 -->
 		<http-basic entry-point-ref="oauth2AuthenticationEntryPoint" />
+		
 		<custom-filter ref="clientCredentialsTokenEndpointFilter"
 			before="BASIC_AUTH_FILTER" />
+		<!-- 拒绝 -->
 		<access-denied-handler ref="oauth2AccessDeniedHandler" />
 	</http>
 
@@ -54,6 +57,7 @@
     <beans:import resource="infrastructure.xml"/>
 
 
+	<!-- Spring Oauth2需要两个认证管理器，第一个就是之前Spring中配置的那一个，用来验证用户名密码的， -->
     <!-- 验证的权限控制 -->
 	<authentication-manager>
 		<authentication-provider>
@@ -65,23 +69,26 @@
 		</authentication-provider>
 	</authentication-manager>
 
+
+	<!-- ***************************************************************************** -->
 	<!-- for spring oauth2 -->
-    <!--token在服务器存储的方式    InMemoryTokenStore ：保存在内存     ；JdbcTokenStore : 保存在数据库中 -->
+    <!--token在服务器存储的方式          InMemoryTokenStore ：保存在内存     ；    JdbcTokenStore : 保存在数据库中 -->
 	<beans:bean id="tokenStore"
 		class="org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore" />
+		
 		
 	<!--<beans:bean id="tokenServices"
 		class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">-->     <!--令牌服务的实体-->
     <beans:bean id="tokenServices"
                 class="org.zhangfc.demo4ssh.service.MyTokenService">      <!-- 自己重写的类 -->
-
-
 		<beans:property name="tokenStore" ref="tokenStore" />
-
         <!--允许刷新token ， 默认不允许-->
 		<beans:property name="supportRefreshToken" value="true" />
 	</beans:bean>
 
+	<!-- ***************************************************************************** -->
+
+	<!-- 这儿设置了一种客户端，id叫做mobile_1，secret叫做secret_1，针对read、write和trust几个域有效。这几个域会在访问控制中被用到。 -->
 	<oauth2:client-details-service id="clientDetailsService" >
 		<oauth2:client client-id="mobile_1"
 			authorized-grant-types="password,authorization_code,refresh_token,implicit"
@@ -93,6 +100,7 @@
 		<beans:constructor-arg ref="clientDetailsService" />
 	</beans:bean>
 	
+	<!-- 　还有一个是用来区分客户端用户的，给它起个名字叫oauth2AuthenticationManager： -->
 	<authentication-manager id="oauth2AuthenticationManager">
 		<authentication-provider user-service-ref="oauth2ClientDetailsUserService" />
 	</authentication-manager>
@@ -107,6 +115,8 @@
 		<oauth2:client-credentials />
 		<oauth2:password />
 	</oauth2:authorization-server>
+	
+	<!-- ***************************************************************************** -->
 
     <!--处理访问成功-->
 	<beans:bean id="oauth2AuthenticationEntryPoint"

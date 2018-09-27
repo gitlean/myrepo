@@ -1,5 +1,7 @@
 package com.isoft.blueberry.controller;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
@@ -40,4 +42,24 @@ public class AjaxController {
 		//return "index";   // /WEB-INF/jsp/index.jsp
 		//return "asdf";
 	}
+	
+	
+	@RequestMapping(value = "/roll")
+	public String roll(HttpServletRequest request) {
+		
+		JSONObject json=new JSONObject();
+		int num=(int)(Math.random()*10000);
+		json.put("count", num);
+		json.put("count", num);
+		System.out.println(new Date()+"--------->"+json);
+		return json.toJSONString();
+
+	}
+	
+	public static void main(String[] args) {
+		int num=(int)(Math.random()*10000);
+		System.out.println(8765);
+	}
+	
+	
 }

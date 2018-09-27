@@ -9,17 +9,17 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-	
+
 	<!-- enable autowire -->
 	<context:annotation-config />
 
 	<!-- (Annotation方式配置services)enable component scanning (beware that this 
 		does not enable mapper scanning!) -->
 	<context:component-scan base-package="com.isoft.client" />
-	
-	<!-- **************************************************************************** -->
 
-	<!-- cxf jaxws客户端 -->
+	<!-- **************************************************************************** -->
+	<!-- SOAP Client -->
+	<!-- +++++++++++++++++++cxf jaxws客户端+++++++++++++++++++++++++++++ -->
 	<bean id="client" class="com.isoft.ws.service.IHelloService"
 		factory-bean="clientFactory" factory-method="create" />
 
@@ -44,6 +44,7 @@
 
 
 	<!-- +++++++++++++++++++使用RestTemplate+++++++++++++++++++++++++++++ -->
+	<!--  RestTemplate 是Spring3后引入的模板技术-->
 	<!--json 和 HttpMessage Converter -->
 	<bean id="mappingJacksonHttpMessageConverter"
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -53,12 +54,24 @@
 			</list>
 		</property>
 	</bean>
+
+	<bean id="stringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/plain;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
 	<!-- https://www.cnblogs.com/coderland/p/5903000.html -->
 	<!-- RestTemplate类似 jdbcTemplate -->
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<!-- 注意支持传递的类型 -->
+		<!-- 参考http://blog.csdn.net/w2865673691/article/details/48466563 -->
 		<property name="messageConverters">
 			<list>
 				<!-- <ref bean="marshallingHttpMessageConverter" /> -->
+				<ref bean="stringHttpMessageConverter" />
 				<ref bean="mappingJacksonHttpMessageConverter" />
 			</list>
 		</property>

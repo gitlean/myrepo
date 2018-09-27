@@ -1,3 +1,7 @@
+
+纯接口 实现文件上传
+
+
 http://blog.csdn.net/philosophyatmath/article/details/43794649
 
 
@@ -32,6 +36,17 @@ http://localhost:8080/simple-upload/ws/file/upload
 
 http://blog.csdn.net/mhmyqn/article/details/26395743      ----基于springmvc
 springmvc RestTemplate文件上传
+
+
+
+txt文本，上传后是空
+
+
+
+
+
+
+
 
 
 

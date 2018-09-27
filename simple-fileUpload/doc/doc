@@ -1,3 +1,6 @@
+利用servlet实现文件上传
+
+
 https://www.cnblogs.com/page-of-Hyman/p/4449881.html
 
 
@@ -5,6 +8,7 @@ https://www.cnblogs.com/page-of-Hyman/p/4449881.html
 4、在项目中，可能同时上传多份文件        (对于同时上传多份文件，如何处理)
 
 
+servlet来处理请求，实现文件上传
 
 
 

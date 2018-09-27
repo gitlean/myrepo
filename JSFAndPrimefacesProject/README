@@ -13,7 +13,7 @@ http://localhost:8080/JSFAndPrimefacesProject/pages/index.jsf  (注意实际后缀名为
 http://localhost:8080/JSFAndPrimefacesProject/pages/show.xhtml
 
 
-  ***********************************************************
+***********************************************************
  
  集成primefaces注意 show.xhtml  标签  f
 以及faces-config.xml头部的配置
@@ -23,4 +23,16 @@ http://www.cnblogs.com/white-knight/p/3443546.html
  ***********************************************************
 http://localhost:8080/JSFAndPrimefacesProject/pages/home.xhtml
  
- 
+http://localhost:8080/JSFAndPrimefacesProject/pages/show4.xhtml
+
+
+
+
+
+
+
+
+
+
+
+

@@ -74,9 +74,15 @@ public class ClientRest2 {
 		phoneList.add(tUserPhone);
 		tUserBean.setPhoneList(phoneList);
 
-		ReturnDTO tReturnDTO = wsc.path("surpolicy/sendBean").accept(MediaType.APPLICATION_XML).acceptEncoding("utf-8")
-				.post(tUserBean, ReturnDTO.class);
-		System.out.println("返回的数据：" + tReturnDTO.getMsg());
+//		ReturnDTO tReturnDTO = wsc.path("surpolicy/sendBean").accept(MediaType.APPLICATION_XML).acceptEncoding("utf-8")
+//				.post(tUserBean, ReturnDTO.class);
+//		System.out.println("返回的数据：" + tReturnDTO.getMsg());
+//		System.out.println(tReturnDTO);
+		
+		
+		String returnStr=wsc.path("surpolicy/sendBean2").accept(MediaType.APPLICATION_XML).acceptEncoding("utf-8").post(tUserBean,
+				String.class);
+		System.out.println(returnStr);
 
 	}
 

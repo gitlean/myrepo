@@ -32,5 +32,9 @@ public class ReturnDTO {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
+	
+	public String toString(){
+		return "[code="+code+",msg="+msg+"]";
+	}
 
 }

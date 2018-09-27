@@ -17,6 +17,7 @@
 
 
 		<!-- 登录表单设置 -->
+		<!--authentication-failure-url  也可以使用authentication-failure-handler-ref -->
 		<sec:form-login login-page="/login.jsp"
 			authentication-failure-url="/login.jsp?error=true"
 			authentication-success-handler-ref="myAuthencticationSuccessHandler" />

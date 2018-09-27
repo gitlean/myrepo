@@ -3,7 +3,9 @@ package com.isoft.blueberry.controller;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -34,7 +36,27 @@ public class ExcelDownloadManager {
 		List<Film> list=service.queryList();
 		System.out.println(list);
 		
+		//----------------------------------------------
+		Film one=service.getFilmById(1);
+		System.out.println(one);
 		
+		Map<String,Object> map=new HashMap<String,Object>();
+		map.put("orderKey", "fname");
+		List<Film> orderList=service.getAllFilmOrder(map);
+		System.out.println(orderList);
+		
+		
+		Film two=new Film();
+		two.setFname("僵尸与超人");
+		service.insertFilm(two);
+		
+		
+		Film three=new Film();
+		three.setId(10L);
+		three.setFname("XXXXXXXXx");
+		service.updateFilm(three);
+		
+		//----------------------------------------------
 		//System.out.println("Got it...");
 		HSSFWorkbook wb=new HSSFWorkbook();
 		HSSFSheet sheet=wb.createSheet("sheet1");

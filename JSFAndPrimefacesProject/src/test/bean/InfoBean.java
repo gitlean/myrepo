@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import org.primefaces.model.LazyDataModel;
 
@@ -12,12 +13,12 @@ import test.service.InfoEntityService;
 import test.service.imp.InfoEntityServiceImp;
 
 @ManagedBean(name="infoBean")
-@SessionScoped
+@ViewScoped
 public class InfoBean implements Serializable
 {
-    private LazyDataModel<Info> lazyModel = new LazyInfoDataModel();
+	//private LazyDataModel<Info> lazyModel = new LazyInfoDataModel();
    
-	//private LazyDataModel<Info> lazyModel =null;
+	private LazyDataModel<Info> lazyModel =null;
     
     //一般是注入的
     private InfoEntityService service=new InfoEntityServiceImp();
@@ -52,8 +53,7 @@ public class InfoBean implements Serializable
     	//SECS此处做了封装 
     	//lazyModel=new PageableData<Info>("serviceIMP","Method","map");
     	
-    	
-    	
+
     	
     	lazyModel=service.getData(keyword);
     	

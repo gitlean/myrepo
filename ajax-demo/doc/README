@@ -23,35 +23,69 @@ http://www.jb51.net/article/107655.htm
 
 http://localhost:8080/ajax-demo/delete.jsp
 
+http://localhost:8080/ajax-demo/echarts-map.jsp
 
-http://localhost:8080/ajax-demo/org/doDelete
+http://localhost:8080/ajax-demo/echarts-map2.jsp   参考地址：https://blog.csdn.net/xingxuexue/article/details/78037829?locationNum=9&fps=1
 
 
+http://localhost:8080/ajax-demo/echarts-map3.jsp   参考地址：https://blog.csdn.net/u012557538/article/details/78562317
+
+http://localhost:8080/ajax-demo/echarts-map4.jsp 
+
+http://localhost:8080/ajax-demo/echarts-map8.jsp 
+
+
+http://localhost:8080/ajax-demo/test.jsp
+
+----------------------------------------------------------------------------
 
 http://www.w3school.com.cn/jquery/ajax_ajax.asp
 ajax() 方法通过 HTTP 请求加载远程数据。
 该方法是 jQuery 底层 AJAX 实现。简单易用的高层实现见 $.get, $.post 等。
 
 
-
-
-
-
 现在由于web.xml中配置的
 
 
+http://localhost:8080/ajax-demo/beating.html
+
+http://localhost:8080/ajax-demo/rolling.jsp        not-working
+
+http://localhost:8080/ajax-demo/numberscroll.html
+
+http://localhost:8080/ajax-demo/rolling2.jsp
+
+-----------------------------------------------------------------------------------
+
+jQuery数字滚动展示效果
+http://www.daimajiayuan.com/sitejs-17758-1.html
+
+
+该插件调用了.$.curCSS方法， 该方法曾是 jQuery.css() 的别名。所以只能引入1.8以下jQuery版本
+http://m18050905128.lofter.com/post/373374_5759f61
+
+
+https://download.csdn.net/download/zhaopf56/5730869
+
+
+动画背景插件
+animateBackground-plugin.js 下载地址
+https://www.cnblogs.com/yeminglong/p/4012744.html
+
+
+jQuery页面滚动数字增长插件jQuery.Running.js
+http://www.jq22.com/jquery-info14459
+http://www.17sucai.com/preview/1/2017-09-22/scroll/index.html
 
 
 
 
 
+china.js百度网盘地址：链接：https://pan.baidu.com/s/1eTDqYaQ 密码：9kf9
 
 
 
-
-
-
-
-
-
-
+-------------------------------------------------
+各省市GEOJSON
+https://blog.csdn.net/lzhlzz/article/details/41347929
+【 地图系列 】 中国各省市县级 JSON 文件

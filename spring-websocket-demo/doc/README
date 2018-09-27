@@ -1,0 +1,29 @@
+https://www.cnblogs.com/wxd0108/p/7999939.html
+Spring-WebSocket 教程
+WebSocket 教程
+
+
+1、客戶端
+
+2、服务端
+a、Spring 框架对 WebSocket 也提供了支持。（spring-websocket）
+b、如果不想使用 Spring 框架的 WebSocket API，你也可以选择基本的 javax.websocket。
+
+
+
+https://www.cnblogs.com/nosqlcoco/p/5860730.html
+还有忘了说了，javax的websocket包，和你现在这套代码没有半毛钱关系，可以不用，它还Spring WebSocket是两套体系，别误人子弟
+
+
+https://blog.csdn.net/zyhlwzy/article/details/78061866
+
+https://www.cnblogs.com/yangchongxing/p/8474256.html
+
+-----------------------------------------------------------
+
+http://localhost:8080/spring-websocket-demo/mvc/index
+点击按钮
+
+
+
+

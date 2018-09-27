@@ -9,7 +9,7 @@ public class ClientTest {
 		// TODO Auto-generated method stub
 		SimpleClientHttpRequestFactory requestFactory=new SimpleClientHttpRequestFactory();
 		RestTemplate restTemplate=new RestTemplate(requestFactory);
-		call(restTemplate);
+		call2(restTemplate);
 		
 
 	}
@@ -19,5 +19,14 @@ public class ClientTest {
 		String data=restTemplate.getForObject("http://localhost:9000/interceptor/hello", String.class);
 		System.out.println(data);
 	}
+	
+	
+	public static void call2(RestTemplate restTemplate){
+		String data=restTemplate.getForObject("http://localhost:9000/interceptor/hello", String.class);
+		System.out.println(data);
+	}
+	
+	
+	
 
 }

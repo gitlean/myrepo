@@ -23,6 +23,7 @@ public class MainApp3 {
 		String filePath = "E:\\苏州市地方企业征信系统信息采集及信息查询授权委托书.pdf";
 
 		RestTemplate rest = new RestTemplate();
+		
 		FileSystemResource resource = new FileSystemResource(new File(filePath));
 		MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
 		param.add("jarFile", resource);

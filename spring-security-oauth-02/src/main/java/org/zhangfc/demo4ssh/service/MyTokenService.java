@@ -178,7 +178,7 @@ public class MyTokenService implements AuthorizationServerTokenServices, Resourc
             }
         }
     }
-
+    //revoke  废除; 撤销，取消
     public boolean revokeToken(String tokenValue) {
         OAuth2AccessToken accessToken = this.tokenStore.readAccessToken(tokenValue);
         if(accessToken == null) {

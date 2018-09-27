@@ -4,13 +4,41 @@
 	<groupId>com.isoft</groupId>
 	<artifactId>spring-netty</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<org.jboss.version>2.0.6.Final</org.jboss.version>
+	</properties>
+
 	<dependencies>
-		<!-- <dependency> <groupId>io.netty</groupId> <artifactId>netty</artifactId> 
-			<version>3.10.6.Final</version> </dependency> -->
+		<!-- 
+		<dependency> 
+			<groupId>io.netty</groupId> 
+			<artifactId>netty</artifactId> 
+			<version>3.10.6.Final</version> 
+		</dependency>
+		-->
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>4.1.19.Final</version>
+			<version>4.1.29.Final</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.marshalling</groupId>
+			<artifactId>jboss-marshalling-river</artifactId>
+			<version>${org.jboss.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.marshalling</groupId>
+			<artifactId>jboss-marshalling-serial</artifactId>
+			<version>${org.jboss.version}</version>
 		</dependency>
 
 	</dependencies>

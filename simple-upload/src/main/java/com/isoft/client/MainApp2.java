@@ -25,7 +25,7 @@ public class MainApp2 {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
-		entityBuilder.addBinaryBody("file", new byte[] {}, ContentType.DEFAULT_BINARY, "E:\\aaaaaaaaaaaaa.txt");
+		entityBuilder.addBinaryBody("file", new byte[] {}, ContentType.DEFAULT_BINARY, "E:\\finance.txt");
 
 		HttpEntity entity = entityBuilder.build();
 
