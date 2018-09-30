@@ -1,0 +1,73 @@
+reference link:
+
+http://www.importnew.com/15731.html
+CountDownLatch是在java1.5被引入的，跟它一起被引入的并发工具类还有CyclicBarrier、Semaphore、ConcurrentHashMap和BlockingQueue，它们都存在于java.util.concurrent包下。
+
+CountDownLatch 和CyclicBarrier的不同之处?
+
+
+并发工具类（一）等待多线程完成的CountDownLatch
+
+线程同步工具之CountDownLatch
+
+
+***********************************************************************************
+cyclic    周期的，循环的; 轮转的           Barrier        屏障; 障碍; 栅栏; 分界线
+Semaphore 信号量
+
+
+http://developer.51cto.com/art/201403/432095.htm
+Java并发之CountDownLatch、CyclicBarrier和Semaphore
+
+直译过来就是倒计数(CountDown)门闩(Latch)
+
+
+
+CyclicBarrier 翻译过来叫循环栅栏、循环障碍什么的（还是有点别扭的。所以还是别翻译了，只可意会不可言传啊）。它主要的方法就是一个：await()。await() 方法没被调用一次，计数便会减少1，并阻塞住当前线程。当计数减至0时，阻塞解除，所有在此 CyclicBarrier 上面阻塞的线程开始运行。在这之后，如果再次调用 await() 方法，计数就又会变成 N-1，新一轮重新开始，这便是 Cyclic 的含义所在。
+
+***********************************************************************************
+
+
+Semaphore 是只允许一定数量的线程同时执行一段任务,即最大并发数        Semaphore=1即是互斥
+
+***********************************************************************************
+
+http://blog.csdn.net/shihuacai/article/details/8856407
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,9 +9,12 @@ public class MainApp {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext-client.xml");
 		Wsclient client = context.getBean(Wsclient.class);
+		
 		//client.sengMsg();
+		//client.sengMsg2();
+		client.sengMsg4();
+		
 		//client.sendBean();
-		client.sengMsg2();
 		
 	}
 

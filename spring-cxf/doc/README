@@ -19,3 +19,13 @@ http://localhost:8080/spring-cxf/ws/restServiceMock/getICInfo
 
 http://localhost:8080/spring-cxf/ws/restMock/surpolicy/sendString/123456
 
+
+
+
+https://www.cnblogs.com/BensonHe/p/4602746.html
+使用RestTemplate发送post请求
+
+https://stackoverflow.com/questions/43176927/spring-resttemplate-415-unsupported-media-type
+
+
+

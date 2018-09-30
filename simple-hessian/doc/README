@@ -1,0 +1,18 @@
+https://www.cnblogs.com/lyhero11/p/5277583.html
+
+
+在服务端其实定义了两个service： BasicService和LinyService，
+不同之处在于是否继承HessianServlet，BasicService是一个pojo，而LinyService是一个servlet。
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,23 +1,12 @@
 package com.isoft.client.rest;
 
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.transform.Source;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Produces;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.ByteArrayHttpMessageConverter;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.ResourceHttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter;
-import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
-import org.springframework.http.converter.xml.SourceHttpMessageConverter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -53,6 +42,16 @@ public class Wsclient {
 
 	}
 
+	//HTTP 415 Unsupported Media Type       ????
+	/**
+	 *  @Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+		@Produces({MediaType.APPLICATION_JSON})
+		public interface IServiceMock {}
+		
+		接受什么样的数据、返回什么样的数据？？           convert
+		这里传的是string  "Hello"   
+	 */
+	
 	public void sengMsg2() {
 
 
@@ -64,6 +63,40 @@ public class Wsclient {
 		System.out.println("<<<<<<>>>>>>>>>>.");
 
 	}
+
+	//HTTP 415 Unsupported Media Type 
+	//这里传的是JSONObject
+	public void sengMsg3() {
+		JSONObject json=new JSONObject();
+		json.put("key1", "value1");
+		JSONObject respon =template.postForObject("http://localhost:8080/spring-cxf/ws/restServiceMock/saveAuth", json.toString(), JSONObject.class);
+		System.out.println(respon.toString());
+		System.out.println("<<<<<<>>>>>>>>>>.");
+
+	}
+	
+	
+	//sengMsg2() 稍微做改动      https://www.cnblogs.com/BensonHe/p/4602746.html    
+	public void sengMsg4() {
+		JSONObject jsonObj=new JSONObject();
+		jsonObj.put("key1", "value1");
+		
+        HttpHeaders headers = new HttpHeaders();
+        MediaType type = MediaType.parseMediaType("application/json; charset=UTF-8");
+        headers.setContentType(type);
+        headers.add("Accept", MediaType.APPLICATION_JSON.toString());
+
+        HttpEntity<String> formEntity = new HttpEntity<String>("Hello", headers);
+
+        JSONObject respon  = template.postForObject("http://localhost:8080/spring-cxf/ws/restServiceMock/saveAuth", formEntity, JSONObject.class);
+		
+	
+		System.out.println(respon.toString());
+		System.out.println("<<<<<<>>>>>>>>>>.");
+
+	}
+	
+	
 	
 	public void sendBean() {
 
