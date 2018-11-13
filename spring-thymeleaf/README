@@ -1,0 +1,29 @@
+概要：
+https://www.cnblogs.com/zjfjava/p/6892576.html
+弥合了设计和开发团队之间的差距。
+1.2 Themeleaf可处理的模板
+可让您处理六种模板，每种模板称为模板模式：【有两种标记模板模式（HTML和XML），三个文本模板模式（TEXT，JAVASCRIPT和CSS）和无操作模板模式（RAW）。】
+HTML
+XML
+TEXT
+JAVASCRIPT
+CSS
+RAW
+
+-----------------------------------------
+
+https://www.cnblogs.com/litblank/p/7988689.html       important
+SpringMVC+Thymeleaf 简单使用
+Thymeleaf模板视图解析器配置步骤：模板解析器->模板引擎->视图解析器
+
+
+其他参考:https://www.cnblogs.com/yby-blogs/p/6924274.html 
+
+
+
+http://localhost:8080/spring-thymeleaf/hello
+http://localhost:8080/spring-thymeleaf/xxxxxxx
+
+-----------------------------------------
+
+

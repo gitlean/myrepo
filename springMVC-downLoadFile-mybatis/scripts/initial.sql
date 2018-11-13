@@ -49,3 +49,26 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-09-05 16:39:33
+
+
+
+
+
+
+
+
+create table cinema(
+batchNo int,
+singal  int,
+remark varchar(64)
+);
+
+insert into cinema(batchNo,singal) value(20180929,0);
+update  cinema  set singal=1 where batchNo=20180929;
+update  cinema  set singal=0 where batchNo=20180929;
+
+select * from cinema;
+
+
+
+

@@ -18,6 +18,8 @@
 	
 	<mappers>
 		<mapper resource="/mapper/FilmMapper.xml"/>
+		<mapper resource="/mapper/CinemaMapper.xml"/>
+		
 		<!-- 可以加多条 -->
 	</mappers>
 </configuration>

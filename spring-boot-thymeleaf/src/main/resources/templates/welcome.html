@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html xmlns:th="http://www.thymeleaf.org">  
+<head>  
+    <title>欢迎</title>  
+    <meta charset="UTF-8"/>  
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>  
+    <link th:href="@{/bootstrap/css/bootstrap.css}" href="../static/bootstrap/css/bootstrap.css" rel="stylesheet"/>  
+    <link th:href="@{/bootstrap/css/bootstrap-theme.css}" href="../static/bootstrap/css/bootstrap-theme.css"  
+          rel="stylesheet"/>  
+    <script th:src="@{/scripts/jquery-3.1.1.min.js}" src="../static/scripts/jquery-3.1.1.min.js"></script>  
+    <script th:src="@{/bootstrap/js/bootstrap.js}" src="../static/bootstrap/js/bootstrap.js"></script>  
+</head>  
+<body>  
+<div class="container">  
+    <div class="row">  
+        <div class="col-md-5">  
+            <div class="panel panel-primary">  
+                <div class="panel-heading text-center">  
+                    <span class="panel-title">泸州职业技术学院</span>  
+                </div>  
+                <div class="panel-body">  
+                    <span th:text="#{lzy.welcome(${name})}"></span>  
+                </div>  
+                <div class="panel-footer text-right">  
+                    <span class="panel-title">酒城工作室@2107</span>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+</div>  
+</body>  
+</html>  

@@ -21,7 +21,7 @@ import com.isoft.filter.HTTPBearerAuthorizeAttribute;
  * @describe:在Application类中注册过滤器，
  */
 
-//@EnableConfigurationProperties(Audience.class)
+//@EnableConfigurationProperties(Audience.class)       //明确指定需要用哪个实体类来装载配置信息
 @SpringBootApplication
 public class Application {
 	public static void main(String[] args) {

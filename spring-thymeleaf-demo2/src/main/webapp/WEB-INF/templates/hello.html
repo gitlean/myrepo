@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>hello</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+	<p th:text="'Hello！, ' + ${name} + '!'">3333</p>
+
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>AGE</th>
+		</tr>
+		<tr th:each="emp : ${empList}">
+			<td th:text="${emp.id}">1</td>
+			<td th:text="${emp.name}">海</td>
+			<td th:text="${emp.age}">18</td>
+		</tr>
+	</table>
+
+</body>
+</html>

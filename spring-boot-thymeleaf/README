@@ -1,0 +1,36 @@
+https://blog.csdn.net/f0rd_/article/details/80580225 important
+很好的thymeleaf模板 入门例子
+
+
+Spring Boot的Thymeleaf支持：
+import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafProperties;
+spring-boot-autoconfigure-x.x.jar
+
+
+
+http://localhost:9527/index
+
+
+http://localhost:9527/showStudent
+
+
+http://localhost:9527/showOneUser
+
+http://localhost:9527/showAllUsers
+
+
+http://localhost:9527/showAllUsers2
+
+
+http://localhost:9527/welcome
+
+
+http://localhost:9527/showServerHost
+
+
+
+
+
+
+
+

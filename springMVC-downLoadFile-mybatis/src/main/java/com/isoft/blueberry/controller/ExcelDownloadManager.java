@@ -20,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.isoft.entity.Film;
+import com.isoft.service.ICinemaService;
 import com.isoft.service.IMyService;
 
 @Controller
@@ -30,6 +31,9 @@ public class ExcelDownloadManager {
 	@Autowired
 	IMyService service;
 	
+	@Autowired
+	ICinemaService cinemaService;
+	
 	@RequestMapping(value = "/exportExcel")
 	public void exportExcel(HttpServletResponse response) throws IOException {
 		logger.debug("ExcelDownloadManager--------->exportExcel");
@@ -39,6 +43,9 @@ public class ExcelDownloadManager {
 		//----------------------------------------------
 		Film one=service.getFilmById(1);
 		System.out.println(one);
+		
+		cinemaService.changeBatchNo(20180929);
+		
 		
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("orderKey", "fname");

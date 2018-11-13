@@ -1,0 +1,34 @@
+
+我们通过学习lambda表达式，了解了如何能够在      不创建额外类的情况下  传递行为  来帮助我们编写出简洁精练的代码。
+lambda表达式是一种通过使用函数式接口让开发者能够快速表达他们的想法的语言概念。
+设计API的时候将lambda，也就是那些使用了函数式接口的流畅的API（我们在lambdas章节中讨论过它们）记在脑子中，
+我们才能真正体验到lambda的强大，
+
+
+https://blog.csdn.net/u013291394/article/details/52624966
+Java8新特性之Stream API
+
+在Java8中引进的Stream API是使用lambda的API之一。
+
+
+
+https://blog.csdn.net/u013291394/article/details/52662761
+Java8新特性之Collectors
+
+
+
+
+
+
+
+
+
+
+parallel方法底层使用了jdk7的fork-join API
+
+
+
+
+
+
+
