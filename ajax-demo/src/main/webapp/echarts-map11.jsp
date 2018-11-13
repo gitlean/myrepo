@@ -10,7 +10,7 @@
 	src="<%=request.getContextPath()%>/js/jquery-3.2.1.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/js/echarts.min.js"></script>
-
+<script src="<%=request.getContextPath()%>/js/china.js"></script>
 </head>
 
 <body>
