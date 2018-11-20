@@ -1,0 +1,6 @@
+name: "alcohol rule2"
+description: "children are not allowed to buy alcohol"
+priority: 1
+condition: "person.isAdult() == true"
+actions:
+  - "System.out.println(\"Shop: yes,Here you are!\");"
