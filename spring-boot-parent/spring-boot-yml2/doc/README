@@ -1,0 +1,24 @@
+https://blog.csdn.net/aa1215018028/article/details/83213507
+另外，可以导入一个配置文件处理器，这样我们在配置文件中写属性时就会有提示了
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <optional>true</optional>
+    </dependency>
+在导入了配置文件处理器后属性名的驼峰式写法中的大写字母在提示的时候会变成-小写字母：等效于驼峰时写法
+last-name
+此处的last-name也可以写为lastName
+
+
+https://www.iteye.com/blog/buddie-2433962
+
+
+
+https://blog.csdn.net/qq_33524158/article/details/79600434   important
+
+http://blog.sina.com.cn/s/blog_7d1968e20102ww7c.html  2important
+
+
+https://www.cnblogs.com/EasonJim/p/7583837.html
+区别spring/spring boot加载yaml文件
+
