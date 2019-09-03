@@ -1,0 +1,51 @@
+https://www.cnblogs.com/EasonJim/p/7583837.html
+如何使用YamlPropertiesFactoryBean使用Spring Framework加载YAML文件？
+
+
+Caused by: java.lang.ClassNotFoundException: org.yaml.snakeyaml.reader.UnicodeReader
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.17</version>
+        </dependency>
+        
+        
+        
+https://qtdebug.com/java-yaml-properties/    
+org.apache.commons.configuration.PropertiesConfiguration;
+        
+        
+http://www.voidcn.com/article/p-zslamyab-btv.html
+
+
+http://www.hackerav.com/?post=14993
+
+https://blog.csdn.net/jsyxcjw/article/details/46763639
+
+
+
+
+https://blog.csdn.net/qq_30038111/article/details/89350308     important
+https://www.jianshu.com/p/a3c7ff0de5ac        important
+https://segmentfault.com/q/1010000003970454
+http://outofmemory.cn/code-snippet/2065/Spring-3-PropertySourcesPlaceholderConfigurer-usage
+
+
+
+https://www.cnblogs.com/wuyx/p/9554874.html   important
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
