@@ -51,5 +51,11 @@ public interface FilmService {
 	 * @return
 	 */
 	public List<Film> getAllFilm();
+	
+	
+	
+	public void test();
+	
+	
 
 }

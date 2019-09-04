@@ -83,8 +83,12 @@
 	<!-- enable autowire -->
 	<context:annotation-config />
 	
-	<!-- 激活@AspectJ支持 -->
+	<!-- https://blog.csdn.net/zhaokejin521/article/details/50144753 -->
+	<!-- https://blog.csdn.net/u014087707/article/details/50633996/ -->
+	<!-- 激活@AspectJ支持,spring会自动在JDK动态代理和CGLIB之间转换 -->
 	<aop:aspectj-autoproxy />
+	
+	
 	
 	<!-- enable transaction demarcation with annotations -->
 	<tx:annotation-driven />
