@@ -44,11 +44,11 @@ public class QuartzScheduleMain {
 
 		// define the job and tie it to our HelloJob class
 		// 创建相关的job信息
-		JobDetail job = newJob(HelloJob.class).withIdentity("job1", "group1").build();
+		JobDetail job = newJob(HelloJob.class).withIdentity("job1", "jgroup1").build();
 
 		// Trigger the job to run on the next round minute
 		// 创建一个触发器的名称
-		Trigger trigger = newTrigger().withIdentity("trigger1", "group1").startAt(runTime).build();
+		Trigger trigger = newTrigger().withIdentity("trigger1", "tgroup1").startAt(runTime).build();  
 
 		// Tell quartz to schedule the job using our trigger
 		// 设置调度相关的Job
@@ -63,7 +63,7 @@ public class QuartzScheduleMain {
 		log.info("------- Started Scheduler -----------------");
 
 		try {
-			Thread.sleep(25L * 1000L);
+			Thread.sleep(25L * 1000L);  //休息25s
 			// executing...
 		} catch (Exception e) {
 		}
@@ -72,14 +72,14 @@ public class QuartzScheduleMain {
 		sched.pauseJob(job.getKey());
 
 		try {
-			Thread.sleep(10L * 1000L);
+			Thread.sleep(10L * 1000L); //休息10s
 		} catch (Exception e) {
 		}
 		log.info("------- resumeJob... -------------");
 		// 恢复Job任务开始执行
 		sched.resumeJob(job.getKey());
 		try {
-			Thread.sleep(10L * 1000L);
+			Thread.sleep(10L * 1000L); //休息10s
 			// executing...
 		} catch (Exception e) {
 		}

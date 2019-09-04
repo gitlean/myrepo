@@ -21,7 +21,7 @@
 		<property name="jobClass" value="com.isoft.demo1.jobs.Job1" />
 		<property name="jobDataAsMap">
 			<map>
-				<entry key="timeout" value="0" />
+				<entry key="timeout" value="4" />
 			</map>
 		</property>
 	</bean>

@@ -149,7 +149,10 @@ public class EncryptUtils {
 		// System.out.println(encrypt("Hello",
 		// MyUtils.getMD5(key).toUpperCase()));
 
-		System.out.println(encrypt("Hello", key));
+		//System.out.println(encrypt("Hello", key));
+		
+		
+		System.out.println(encrypt("大类资产是指股票类、债券类、商品类等不同种类的资产，做大类资产配置就是要在组合中配置不同类别的资产，同时根据投资者和市场的形势进行动态调整。", key));
 
 	}
 

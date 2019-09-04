@@ -1,6 +1,6 @@
 package com.isoft.coordinate;
 
-public class Main2 {
+public class MercatorDemo {
 	public static void main(String[] args) {
 		Point LonLat=new Point();
 		LonLat.setX(32.45);

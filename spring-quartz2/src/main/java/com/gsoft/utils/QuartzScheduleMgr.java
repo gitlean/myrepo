@@ -42,7 +42,7 @@ public class QuartzScheduleMgr {
 		return scheduler;
 	}
 
-	public static Scheduler getInstanceScheduler() {
+	public static Scheduler getInstanceScheduler() {  //单例模式
 		return scheduler;
 	}
 

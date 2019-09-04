@@ -27,6 +27,7 @@ public class ContinueWithoutRecall {
 					Trigger tg = scheduler.getTrigger(new TriggerKey(triggers.get(j), triggerGroups.get(i)));
 					// ②-1:根据名称判断
 					if (tg instanceof SimpleTrigger && tg.getDescription().equals("jgroup1.DEFAULT")) {// 由于我们之前测试没有设置触发器所在组，所以默认为DEFAULT
+	
 						// ②-1:恢复运行
 						scheduler.resumeJob(new JobKey(triggers.get(j), triggerGroups.get(i)));
 					}

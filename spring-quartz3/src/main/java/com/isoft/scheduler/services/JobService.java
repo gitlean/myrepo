@@ -15,21 +15,21 @@ public interface JobService {
 
 	int lazyLogListSize(Map<String, Object> arg0);
 
-	JobEntity getJobEntity(String arg0, String arg1);
+	JobEntity getJobEntity(String jobName, String jobType);
 
 	List<JobEntity> getActiveJobs();
 
-	void updateJob(JobEntity arg0);
+	void updateJob(JobEntity jobEntity);
 
-	boolean saveAndCreate(JobEntity arg0);
+	boolean saveAndCreate(JobEntity currentJob);
 
-	boolean updateAndResume(JobEntity arg0);
+	boolean updateAndResume(JobEntity currentJob);
 
-	boolean pauseJob(JobEntity arg0);
+	boolean pauseJob(JobEntity currentJob);
 
-	boolean resumeTrigger(JobEntity arg0);
+	boolean resumeTrigger(JobEntity currentJob);
 
-	boolean executeJob(JobEntity arg0);
+	boolean executeJob(JobEntity currentJob);
 
 	void addLog(JobLog arg0);
 

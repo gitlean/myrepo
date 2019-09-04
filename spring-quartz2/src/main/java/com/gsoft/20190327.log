@@ -1,0 +1,123 @@
+14:00:03.289 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- Initializing ----------------------
+14:00:03.374 [main] INFO org.quartz.impl.StdSchedulerFactory - Using ConnectionProvider class 'org.quartz.utils.C3p0PoolingConnectionProvider' for data source 'myDS'
+14:00:03.438 [MLog-Init-Reporter] INFO com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+14:00:03.465 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+14:00:03.465 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+14:00:03.465 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+14:00:03.465 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+14:00:03.465 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+14:00:03.470 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+14:00:03.470 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+14:00:03.470 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+14:00:03.471 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+14:00:03.829 [main] INFO com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+14:00:03.858 [main] DEBUG com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean - MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge6tda11gn78am1fvrs34|2471cca7,name=1hge6tda11gn78am1fvrs34|2471cca7 registered.
+14:00:03.889 [main] DEBUG com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean - MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge6tda11gn78am1fvrs34|2471cca7,name=1hge6tda11gn78am1fvrs34|2471cca7 unregistered, in order to be reregistered after update.
+14:00:03.889 [main] DEBUG com.mchange.v2.c3p0.management.DynamicPooledDataSourceManagerMBean - MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge6tda11gn78am1fvrs34|2471cca7,name=1hge6tda11gn78am1fvrs34|2471cca7 registered.
+14:00:03.910 [main] INFO org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+14:00:03.930 [main] INFO org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+14:00:03.931 [main] INFO org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+14:00:03.932 [main] INFO org.quartz.impl.jdbcjobstore.JobStoreTX - Using thread monitor-based data access locking (synchronization).
+14:00:03.933 [main] INFO org.quartz.impl.jdbcjobstore.JobStoreTX - JobStoreTX initialized.
+14:00:03.935 [main] INFO org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'MyScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 3 threads.
+  Using job-store 'org.quartz.impl.jdbcjobstore.JobStoreTX' - which supports persistence. and is not clustered.
+
+14:00:03.935 [main] INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'MyScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+14:00:03.935 [main] INFO org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+14:00:03.935 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- Initialization Complete -----------
+14:00:03.937 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- Scheduling Job  -------------------
+14:00:03.946 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is desired by: main
+14:00:03.946 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is being obtained: main
+14:00:03.946 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' given to: main
+14:00:03.982 [main] INFO com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge6tda11gn78am1fvrs34|2471cca7, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge6tda11gn78am1fvrs34|2471cca7, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/quartz?characterEncoding=utf-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 0, maxStatementsPerConnection -> 120, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+14:00:04.008 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+14:00:04.008 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+14:00:04.008 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+14:00:04.008 [main] DEBUG com.mchange.v2.cfg.MConfig - The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+14:00:04.013 [main] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - com.mchange.v2.resourcepool.BasicResourcePool@548e7350 config: [start -> 3; min -> 1; max -> 5; inc -> 3; num_acq_attempts -> 30; acq_attempt_delay -> 1000; check_idle_resources_delay -> 0; max_resource_age -> 0; max_idle_time -> 0; excess_max_idle_time -> 0; destroy_unreturned_resc_time -> 0; expiration_enforcement_delay -> 0; break_on_acquisition_failure -> false; debug_store_checkout_exceptions -> false; force_synchronous_checkins -> false]
+14:00:04.013 [main] DEBUG com.mchange.v2.c3p0.impl.C3P0PooledConnectionPoolManager - Created new pool for auth, username (masked): 'ro******'.
+14:00:04.013 [main] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - acquire test -- pool size: 0; target_pool_size: 3; desired target? 1
+14:00:04.013 [main] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - awaitAvailable(): [unknown]
+14:00:04.316 [main] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.SimpleTriggerPersistenceDelegate
+14:00:04.318 [main] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate
+14:00:04.320 [main] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.CalendarIntervalTriggerPersistenceDelegate
+14:00:04.322 [main] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.DailyTimeIntervalTriggerPersistenceDelegate
+14:00:04.456 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' retuned by: main
+14:00:04.460 [main] INFO com.gsoft.test.QuartzScheduleMain - group1.job1 will run at: Wed Mar 27 14:01:00 CST 2019
+14:00:04.461 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is desired by: main
+14:00:04.461 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is being obtained: main
+14:00:04.461 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' given to: main
+14:00:04.465 [main] INFO org.quartz.impl.jdbcjobstore.JobStoreTX - Freed 0 triggers from 'acquired' / 'blocked' state.
+14:00:04.466 [main] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Found 0 triggers that missed their scheduled fire-time.
+14:00:04.468 [main] INFO org.quartz.impl.jdbcjobstore.JobStoreTX - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+14:00:04.468 [main] INFO org.quartz.impl.jdbcjobstore.JobStoreTX - Recovery complete.
+14:00:04.469 [main] INFO org.quartz.impl.jdbcjobstore.JobStoreTX - Removed 0 'complete' triggers.
+14:00:04.471 [main] INFO org.quartz.impl.jdbcjobstore.JobStoreTX - Removed 0 stale fired job entries.
+14:00:04.471 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' retuned by: main
+14:00:04.472 [main] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - JobStore background threads started (as scheduler was started).
+14:00:04.472 [main] INFO org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_NON_CLUSTERED started.
+14:00:04.472 [QuartzScheduler_MyScheduler-NON_CLUSTERED_MisfireHandler] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - MisfireHandler: scanning for misfires...
+14:00:04.472 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- Started Scheduler -----------------
+14:00:04.474 [QuartzScheduler_MyScheduler-NON_CLUSTERED_MisfireHandler] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Found 0 triggers that missed their scheduled fire-time.
+14:00:04.477 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+14:00:29.472 [main] INFO com.gsoft.test.QuartzScheduleMain - -------pauseJob.. -------------
+14:00:29.473 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is desired by: main
+14:00:29.473 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is being obtained: main
+14:00:29.474 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' given to: main
+14:00:29.619 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' retuned by: main
+14:00:29.627 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+14:00:39.622 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- resumeJob... -------------
+14:00:39.623 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is desired by: main
+14:00:39.623 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is being obtained: main
+14:00:39.623 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' given to: main
+14:00:39.802 [main] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' retuned by: main
+14:00:39.908 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 1 triggers
+14:00:49.804 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- Waiting 65 seconds... -------------
+14:01:00.002 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is desired by: MyScheduler_QuartzSchedulerThread
+14:01:00.002 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is being obtained: MyScheduler_QuartzSchedulerThread
+14:01:00.002 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' given to: MyScheduler_QuartzSchedulerThread
+14:01:00.122 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' retuned by: MyScheduler_QuartzSchedulerThread
+14:01:00.127 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.simpl.PropertySettingJobFactory - Producing instance of Job 'group1.job1', class=com.gsoft.jobs.HelloJob
+14:01:00.132 [MyScheduler_Worker-1] DEBUG org.quartz.core.JobRunShell - Calling execute on job group1.job1
+14:01:00.133 [MyScheduler_Worker-1] INFO com.gsoft.jobs.HelloJob - Hello World! - Wed Mar 27 14:01:00 CST 2019
+14:01:00.134 [MyScheduler_Worker-1] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is desired by: MyScheduler_Worker-1
+14:01:00.134 [MyScheduler_Worker-1] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' is being obtained: MyScheduler_Worker-1
+14:01:00.134 [MyScheduler_Worker-1] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' given to: MyScheduler_Worker-1
+14:01:00.148 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+14:01:00.247 [MyScheduler_Worker-1] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Deleting job: group1.job1
+14:01:00.331 [MyScheduler_Worker-1] DEBUG org.quartz.impl.jdbcjobstore.SimpleSemaphore - Lock 'TRIGGER_ACCESS' retuned by: MyScheduler_Worker-1
+14:01:04.472 [QuartzScheduler_MyScheduler-NON_CLUSTERED_MisfireHandler] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - MisfireHandler: scanning for misfires...
+14:01:04.476 [QuartzScheduler_MyScheduler-NON_CLUSTERED_MisfireHandler] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - Found 0 triggers that missed their scheduled fire-time.
+14:01:27.419 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+14:01:53.473 [MyScheduler_QuartzSchedulerThread] DEBUG org.quartz.core.QuartzSchedulerThread - batch acquisition of 0 triggers
+14:01:54.805 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- Shutting Down ---------------------
+14:01:54.805 [main] INFO org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_NON_CLUSTERED shutting down.
+14:01:54.805 [main] INFO org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_NON_CLUSTERED paused.
+14:01:54.806 [main] DEBUG org.quartz.simpl.SimpleThreadPool - Shutting down threadpool...
+14:01:54.836 [MyScheduler_Worker-1] DEBUG org.quartz.simpl.SimpleThreadPool - WorkerThread is shut down.
+14:01:54.924 [MyScheduler_Worker-3] DEBUG org.quartz.simpl.SimpleThreadPool - WorkerThread is shut down.
+14:01:54.924 [MyScheduler_Worker-2] DEBUG org.quartz.simpl.SimpleThreadPool - WorkerThread is shut down.
+14:01:54.925 [main] DEBUG org.quartz.simpl.SimpleThreadPool - No executing jobs remaining, all threads stopped.
+14:01:54.925 [main] DEBUG org.quartz.simpl.SimpleThreadPool - Shutdown of threadpool complete.
+14:01:54.929 [main] DEBUG com.mchange.v2.c3p0.management.ActiveManagementCoordinator - MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge6tda11gn78am1fvrs34|2471cca7,name=1hge6tda11gn78am1fvrs34|2471cca7 unregistered.
+14:01:54.932 [main] DEBUG com.mchange.v2.c3p0.management.ActiveManagementCoordinator - C3P0Registry mbean unregistered.
+14:01:54.932 [main] DEBUG org.quartz.impl.jdbcjobstore.JobStoreTX - JobStore background threads shutdown.
+14:01:54.932 [main] INFO org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_NON_CLUSTERED shutdown complete.
+14:01:54.932 [main] INFO com.gsoft.test.QuartzScheduleMain - ------- Shutdown Complete -----------------
+14:01:54.931 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - Preparing to destroy resource: com.mchange.v2.c3p0.impl.NewPooledConnection@13ce3fc
+14:01:54.933 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool - Preparing to destroy PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@13ce3fc
+14:01:54.937 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool - Successfully destroyed PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@13ce3fc
+14:01:54.937 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - Successfully destroyed resource: com.mchange.v2.c3p0.impl.NewPooledConnection@13ce3fc
+14:01:54.937 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - Preparing to destroy resource: com.mchange.v2.c3p0.impl.NewPooledConnection@670ceebf
+14:01:54.937 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool - Preparing to destroy PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@670ceebf
+14:01:54.939 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool - Successfully destroyed PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@670ceebf
+14:01:54.939 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - Successfully destroyed resource: com.mchange.v2.c3p0.impl.NewPooledConnection@670ceebf
+14:01:54.939 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - Preparing to destroy resource: com.mchange.v2.c3p0.impl.NewPooledConnection@1ff4b6ba
+14:01:54.939 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool - Preparing to destroy PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@1ff4b6ba
+14:01:54.940 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool - Successfully destroyed PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@1ff4b6ba
+14:01:54.941 [Resource Destroyer in BasicResourcePool.close()] DEBUG com.mchange.v2.resourcepool.BasicResourcePool - Successfully destroyed resource: com.mchange.v2.c3p0.impl.NewPooledConnection@1ff4b6ba

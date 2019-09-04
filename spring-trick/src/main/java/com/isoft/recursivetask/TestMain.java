@@ -7,7 +7,10 @@ public class TestMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//call1();
-		call2();
+		//call2();
+		
+		//call3();
+		call4();
 
 	}
 	
@@ -42,8 +45,25 @@ public class TestMain {
 		
 	}
 	
+	public static void call3(){
+		CollectionTask collectTask=new CollectionTask();
+		
+		ForkJoinPool pool=new ForkJoinPool(10);
+		pool.submit(collectTask);
+		 
+		System.out.println(collectTask.resultMap);
 	
+	}
 	
+	public static void call4(){
+		CollectionTask collectTask=new CollectionTask();
+		
+		collectTask.fork();
+		collectTask.join();
+		 
+		 
+		System.out.println(collectTask.resultMap);
 	
+	}
 
 }

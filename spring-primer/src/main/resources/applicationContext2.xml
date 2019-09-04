@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+ 	
+ 	<bean id="helloBean" class="com.isoft.beans.HelloBean"/>
+ 
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<!-- 国际化支持的定义在文件名为messages的文件中 -->
+			<value>messages</value>
+		</property>
+	</bean>
+
+	<bean id="log" class="com.isoft.action.Log" />
+
+	<bean id="logListener" class="com.isoft.action.LogListener" />
+
+
+	<!--  -->
+	<bean id="timeBook" class="com.isoft.service.imp.TimeBook" />
+
+	<bean id="logAround" class="com.isoft.proxyFactorydemo3.LogAround" /><!-- 是一个Advice -->
+ 	
+ 
+	 <!-- 切入点顾问,   代理目标类的指定方法，若果代理所有目标类的方法，可不配置 ，-->
+ 	<bean id="logAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor" >
+ 		<property name="advice">
+ 			<ref bean="logAround"/>
+ 		</property>
+ 		
+ 		<!-- 指定要代理的方法 -->
+		<property name="patterns">
+			<list>
+				<value>.*doAuditing.*</value>
+			</list>
+		</property>
+ 	
+ 	</bean>
+ 
+ 
+ 	
+ 	<!-- 设置自动代理 -->
+ 	<bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+ 	
+ 	
+ 	
+ 	<!-- 设置自动代理   与上面有区别，可以设置类名称符合某种条件的类被代理
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<value>user*</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>logAdvisor</value>
+			</list>
+		</property>
+	</bean>
+ 	 -->
+ 	
+
+	<!-- 
+	<bean id="configProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+				
+				<value>classpath*:*.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name="properties" ref="configProperties"></property>
+	</bean>
+ 	-->
+
+
+</beans>

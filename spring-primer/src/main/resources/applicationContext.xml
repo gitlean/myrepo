@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+ 	
+ 	<bean id="helloBean" class="com.isoft.beans.HelloBean"/>
+ 
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<!-- 国际化支持的定义在文件名为messages的文件中 -->
+			<value>messages</value>
+		</property>
+	</bean>
+
+	<bean id="log" class="com.isoft.action.Log" />
+
+	<bean id="logListener" class="com.isoft.action.LogListener" />
+
+
+	<!--  -->
+
+
+	<bean id="logAround" class="com.isoft.proxyFactorydemo3.LogAround" /><!-- 是一个Advice -->
+ 	<bean id="timeBook" class="com.isoft.service.imp.TimeBook" />
+ 
+	 <!-- 切入点顾问,   代理目标类的指定方法，若果代理所有目标类的方法，可不配置 ，-->
+ 	<bean id="logAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor" >
+ 		<property name="advice">
+ 			<ref bean="logAround"/>
+ 		</property>
+ 		
+ 		<!-- 指定要代理的方法 -->
+ 	    <!--patterns,如果有多个指定的值的话，第二种写法：可以使用，隔开，例如value=".*add,.*delete"--> 
+		<property name="patterns">
+			<list>
+				<value>.*doAuditing.*</value><!-- 可以指定代理所有的方法 -->
+			</list>
+		</property>
+ 	
+ 	</bean>
+ 
+ 	 <!-- Spring AOP中有两个PointcutAdvisor
+      ——RegexpMethodPointcutAdvisor和 NameMatchMethodPointcutAdvisor，它们都在org.springframework.aop.support包中，
+	     都可以过滤要拦截的方法，配置方法也大致相同 	https://www.cnblogs.com/65702708/archive/2012/08/14/2638514.html-->
+	
+ 	 
+ 	<!-- 设定代理类 -->
+ 	<bean id="logProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+ 		<!-- 这里代理的是接口 -->
+ 		<property name="proxyInterfaces">
+ 			<value>com.isoft.service.ITimeBook</value>
+ 		</property>
+ 		
+ 		<!-- 这个属性为true时,表示被代理的是目标类本身而不是目标类的接口 ,这时候可以把 上面的  proxyInterfaces  去掉-->
+ 		<!-- 
+		<property name="proxyTargetClass">
+			<value>true</value>
+		</property> 
+ 		 -->
+ 		 
+ 		<!-- 是ProxyFactoryBean要代理的目标类 -->
+ 		<property name="target">
+ 			<ref bean="timeBook"/>
+ 		</property>
+ 		
+ 		<!-- 程序中的Advice ,可以有多个-->
+ 		<property name="interceptorNames">
+ 			<list>
+ 				
+ 				<value>logAround</value>
+ 				
+ 				 <!--   根据需要是否使用Advisor，一般用Advisor，上面只是一种特例，即代理所有方法
+ 				 <value>logAdvisor</value>
+ 				 -->
+ 				
+ 			</list>
+ 		</property>
+
+ 	</bean>
+
+	<!-- 
+	<bean id="configProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+				
+				<value>classpath*:*.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name="properties" ref="configProperties"></property>
+	</bean>
+ 	-->
+
+
+</beans>

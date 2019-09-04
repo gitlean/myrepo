@@ -23,7 +23,7 @@ public class TestMain {
 			e.printStackTrace();
 		}
 
-		QuartzManager.modifyJobTime(myJob, "*/5 * * * * ?");
+		QuartzManager.modifyJobTime(myJob, "*/5 * * * * ?"); //每5s执行一次，等状态稳定
 	}
 
 }

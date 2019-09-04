@@ -30,7 +30,7 @@ public class TestMain {
 
 		jobEntity.setCronExpression("*/2 * * * * ?");
 
-		schedulerHelper.createAndStartJob(jobEntity); // 创建并启动
+		//schedulerHelper.createAndStartJob(jobEntity); // 创建并启动
 
 //		try {
 //			Thread.currentThread().sleep(10000);
@@ -45,6 +45,6 @@ public class TestMain {
 
 		//schedulerHelper.executeOnceJob(jobEntity);
 		
-
+		//schedulerHelper.executeOnceJob2(jobEntity);
 	}
 }

@@ -6,6 +6,9 @@ quartz
 动态任务
 
 
+scheduler.resumeJob(new JobKey(triggers.get(j), triggerGroups.get(i)));
+scheduler.rescheduleJob(triggerKey, cronTrigger);
+
 
 
 

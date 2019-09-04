@@ -1,6 +1,4 @@
 *.class
-*/*/.settings/*
-*/.settings/*
 */target/*
 */*/target/*
 */bin/*
@@ -8,8 +6,10 @@
 */target/*
 *.gitignore
 *.MF
-
-
-
-
-
+*/*/.settings/*
+*/*/.project
+*/*/.classpath
+*/.settings/*
+*/.project
+*/.classpath
+*/.idea/*

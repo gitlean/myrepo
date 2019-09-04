@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.ContextLoader;
 
 import com.isoft.util.PathUtil;
 
@@ -33,6 +34,14 @@ public class ExcelDownloadManager2 {
 	@RequestMapping(value = "/exportExcel2")
 	public void exportExcel(HttpServletResponse response) throws IOException {
 		// System.out.println("Got it...");
+		String a=this.getClass().getClassLoader().getResource("").getPath();//获取工程classes下的路径，这个方法可以在任意jsp，servlet，java文件中使用
+		
+		//在spring中,可以通过
+		String b= ContextLoader.getCurrentWebApplicationContext().getServletContext().getRealPath("/");  //来获取。
+		
+		System.out.println(a+"\r\n"+b);
+		
+		
 		HSSFWorkbook wb = new HSSFWorkbook();
 		HSSFSheet sheet = wb.createSheet("sheet1");
 		

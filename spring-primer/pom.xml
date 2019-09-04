@@ -1,0 +1,195 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.isoft</groupId>
+  <artifactId>spring-primer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+   <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<spring.version>2.0-m1</spring.version>
+
+		<slf4j.version>1.7.5</slf4j.version>
+		<logback.version>1.2.3</logback.version>
+		 
+		
+	</properties>
+  
+    <dependencies>
+    	<!-- -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+  		 
+
+		<!-- cglib -->
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib</artifactId>
+		    <version>3.2.8</version>
+		</dependency>
+		
+
+
+
+  	    <!-- web jar -->
+		
+		<!--即  ${tomcat_home}/lib 下的 servlet-api-->
+		<!-- javax.servlet:servlet-api 升级 javax.servlet:javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+ 		
+ 		<!--即  ${tomcat_home}/lib 下的 jsp-api-->
+ 		<!-- javax.servlet:jsp-api 升级   javax.servlet.jsp:jsp-api 升级   javax.servlet.jsp:javax.servlet.jsp-api-->
+		<!-- 根据需要是否导入  -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
+		
+
+		<!-- jstl-api 依赖 servlet-api和jsp-api,  而${tomcat_home}/lib目录下有servlet-api和jsp-api  -->
+		<!-- 如果需要用到  jstl ，为防止版本冲突，exclusion  servlet-api和jsp-api  -->
+		<!-- tomcat7是兼容j2ee 3.0规范的，所以我们将jstl 依赖的东西给去除掉，防止和tomcat自身的servlet jar包冲突 -->
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>jstl-api</artifactId>
+			<version>1.2</version>
+			
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>servlet-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.servlet.jsp</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+			</exclusions>
+			
+		</dependency>
+		
+		<!-- 再导入jstl的实现      http://www.javacoder.cn/?p=195-->
+		<!-- 基本上有两个版本，一个是glassfish 的jstl-impl, 另一个是apache的taglibs-standard-impl -->
+		<!-- 顺便说一下jstl-impl-1.2.jar 和taglibs-standard-impl-1.2.1.jar 的区别，这两个包的内容很相似，后者应该是前者的一个再打包，因为Apache的taglibs工程从2009年以后一直处于停止状态。 -->
+		<!-- 如果缺失jstl-imp  报错：org.apache.jasper.JasperException: The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved in either web.xml or the jar files deployed with this application -->
+	
+		<dependency>
+	      <groupId>org.apache.taglibs</groupId>
+	      <artifactId>taglibs-standard-impl</artifactId>
+	      <version>1.2.1</version>
+	    </dependency>
+		
+		<!-- 如果用 glassfish 的jstl-impl -->
+		<!-- 
+		<dependency> 
+		  <groupId>org.glassfish.web</groupId>  
+		  <artifactId>jstl-impl</artifactId>  
+		  <version>1.2</version>  
+		  <exclusions> 
+		    <exclusion> 
+		      <groupId>javax.servlet</groupId>  
+		      <artifactId>servlet-api</artifactId> 
+		    </exclusion>  
+		    <exclusion> 
+		      <groupId>javax.servlet.jsp</groupId>  
+		      <artifactId>jsp-api</artifactId> 
+		    </exclusion>  
+		    <exclusion> 
+		      <groupId>javax.servlet.jsp.jstl</groupId>  
+		      <artifactId>jstl-api</artifactId> 
+		    </exclusion> 
+		  </exclusions> 
+		</dependency>
+ 		-->
+
+
+
+		
+		<!--  在以前jstl版本还需taglib,  但在jstl-1.2.jar 不需要了；JSTL使用需加入两个jar包:jstl与taglibs-->
+		<!-- 即   jstl和taglibs     =      jstl-api + jstl-imp   -->
+		<!--
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		-->
+
+		<!-- web jar  END -->
+		
+		
+		
+		<!-- 日志相关 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+			<version>${logback.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.logback-extensions</groupId>
+			<artifactId>logback-ext-spring</artifactId>
+			<version>0.1.4</version>
+		</dependency>
+		
+		<!-- 日志相关 END -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+	
+	
+</project>

@@ -23,7 +23,7 @@ public class Job1 extends QuartzJobBean {
 	 */
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-		System.out.println("定时任务执行中…" + new Date());
+		System.out.println("定时任务执行中…" + new Date()+"\t"+"传入的属性值：timout="+timeout);
 
 	}
 

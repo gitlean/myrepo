@@ -132,13 +132,16 @@ public class SchedulerHelper {
 			
 			jobDataMap.put("jobClass", jobEntity.getJobClass());
 			jobDataMap.put("jobMethod", jobEntity.getJobMethod());
+			
+
 			Class clazz = JobsDistributor.class;
 			JobDetail jobDetail=JobBuilder.newJob(clazz).withIdentity(getJobKey(jobEntity)).usingJobData(jobDataMap).build();
 			
 			// 2、创建Trigger
 			TriggerBuilder simpleTriggerBuilder = TriggerBuilder.newTrigger()
-					.withIdentity(getTriggerKey(jobEntity))
+					.withIdentity(getTriggerKey(jobEntity))  
 					.withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(2)).startNow();
+
 			Calendar e = Calendar.getInstance();
 			 //add():为给定的日历字段添加或减去指定的时间量  
 			e.add(Calendar.SECOND, 2);
@@ -151,7 +154,7 @@ public class SchedulerHelper {
 			
 			// 调度执行
 			scheduler.scheduleJob(jobDetail,trigger); // 调度(scheduleJob)
-			
+
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -159,9 +162,45 @@ public class SchedulerHelper {
 			return false;
 		}
 	}
+	
+	
+	
+	
+	public boolean executeOnceJob2(JobEntity jobEntity) {
+		try {
+
+			TriggerBuilder simpleTriggerBuilder = TriggerBuilder.newTrigger()
+					.withIdentity(generateTriggerKey(jobEntity))
+					.forJob(getJobKey(jobEntity))
+					.withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(2));
+
+			Calendar e = Calendar.getInstance();
+			 //add():为给定的日历字段添加或减去指定的时间量  
+			e.add(Calendar.SECOND, 2);
+			simpleTriggerBuilder.startAt(e.getTime()); 
+			
+			e.add(Calendar.SECOND, 3);
+			simpleTriggerBuilder.endAt(e.getTime());
+			
+			JobDataMap jobDataMap = new JobDataMap();
+			jobDataMap.put("tempExec", Boolean.TRUE.toString());
+			
+			simpleTriggerBuilder.usingJobData(jobDataMap);
+			
+			Trigger trigger = simpleTriggerBuilder.build();
+
+			scheduler.scheduleJob(trigger); // 调度(scheduleJob)
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error("executeOnceJob", e);
+			return false;
+		}
+	}
+
 	/**
 	 * 重新恢复触发器相关的job任务
-	 * 
+	 * 重新排定日程
 	 * @param oldJob
 	 * @param newJob
 	 * @return
@@ -293,14 +332,9 @@ public class SchedulerHelper {
 
 	// 生成TriggerKey
 	public static TriggerKey generateTriggerKey(JobEntity jobEntity) {
-		
-		
-		
-		//return new TriggerKey("trigger_" + UUID.randomUUID().toString(), jobEntity.getTriggerType());
-	
-		//修改
-		return new TriggerKey(jobEntity.getTriggerName(), jobEntity.getTriggerType());
-		
+
+		return new TriggerKey(IDENTIFY_TRIGGER_PREFIX + UUID.randomUUID().toString(), jobEntity.getTriggerType());
+
 	}
 
 }

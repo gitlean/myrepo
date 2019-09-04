@@ -15,10 +15,10 @@ import org.apache.commons.lang3.StringUtils;
 public class JobEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@Transient
-	private static final String IDENTIFY_JOB_PREFIX = "job_";
-	@Transient
-	private static final String IDENTIFY_TRIGGER_PREFIX = "trigger_";
+	//@Transient
+	//private static final String IDENTIFY_JOB_PREFIX = "job_";
+	//@Transient
+	//private static final String IDENTIFY_TRIGGER_PREFIX = "trigger_";
 	@Transient
 	private String uuid;
 	
@@ -71,6 +71,9 @@ public class JobEntity implements Serializable {
 	@Column(name = "JOB_METHOD", length = 50)
 	private String jobMethod;
 
+	@Column(name = "CREATE_DATE")
+	private Date createDate;
+	
 	public String getJobName() {
 		this.generateJobIdent();
 		return this.jobName;
@@ -193,7 +196,21 @@ public class JobEntity implements Serializable {
 		this.name = name;
 	}
 
+	public String getJobId() {
+		return jobId;
+	}
 
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
 
 	private void generateJobIdent() {
 		if (StringUtils.isBlank(this.jobName) || StringUtils.isBlank(this.triggerName)) {
@@ -204,13 +221,6 @@ public class JobEntity implements Serializable {
 
 	}
 
-	public String getJobId() {
-		return jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
 
 	public void copyValues(JobEntity currentJob) {
 		this.name = currentJob.getName();

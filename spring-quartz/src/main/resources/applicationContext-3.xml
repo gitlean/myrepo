@@ -22,6 +22,9 @@
 		</property>
 		<property name="targetMethod" value="doJob2" />
 		<property name="concurrent" value="false" /><!-- 作业不并发调度 -->
+		
+		<!-- 此时不能像applicationContext-2.xml 通过 jobDataAsMap 设置 该任务类中需要注入的属性值-->
+		<!-- 但是否可以 设置 ${targetMethod} 的入参呢 （假如${targetMethod}有入参）  ？？？  -->
 	</bean>
   
 

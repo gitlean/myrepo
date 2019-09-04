@@ -1,0 +1,4 @@
+https://blog.csdn.net/qq_21050291/article/details/72523138
+
+我们借助于Spring Aop的命名空间可以将纯POJO转换为切面，实际上这些POJO只是提供了满足切点的条件时所需要调用的方法，但是，这种技术需要XML进行配置，不能支持注解 
+所以spring借鉴了AspectJ的切面，以提供注解驱动的AOP，本质上它依然是Spring基于代理的AOP，只是编程模型与AspectJ完全一致，这种风格的好处就是不需要使用XML进行配置

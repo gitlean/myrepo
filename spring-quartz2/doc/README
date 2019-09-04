@@ -6,3 +6,40 @@ http://m.blog.csdn.net/qq383264679/article/details/51376207
 quartz与spring灵活集成
 
 作业存储和持久化
+
+
+
+
+
+
+job   trigger 添加到schedule管理器中
+job+trigger
+
+
+最后考虑将 schedule管理器 中的状态持久化
+
+-----------------------------------------------
+-----------------------------------------------
+select * from qrtz_job_details;
+job的详细信息
+
+------------
+select * from qrtz_simple_triggers; 
+select * from qrtz_cron_triggers;
+
+如果定义了simpletrigger则
+qrtz_simple_triggers有数据
+如果定义了crontrigger则
+qrtz_cron_triggers有数据
+------------
+
+
+select * from qrtz_triggers;  
+
+
+
+select * from qrtz_fired_triggers; 
+
+
+
+-----------------------------------------------
