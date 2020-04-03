@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test03_parameter" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db0cb5e2-6084-4538-af57-9c53f0a11c0b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="userName" class="java.lang.String"/>
+	<parameter name="schoolName" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="214" splitType="Stretch">
+			<frame>
+				<reportElement x="120" y="-17" width="330" height="200" forecolor="#090A0A" backcolor="#F7CECD" uuid="78e76770-3e5a-4b64-b837-bef036ccdb2e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<line>
+					<reportElement x="0" y="100" width="330" height="1" uuid="0922cdb6-e0ff-4e68-9772-d5b1a5a77e58"/>
+				</line>
+				<staticText>
+					<reportElement x="21" y="38" width="37" height="18" uuid="fdc6704e-78b8-4bca-bed8-1d996e6e1bf1"/>
+					<textElement>
+						<font fontName="NewFontOne"/>
+					</textElement>
+					<text><![CDATA[用户名]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="141" y="73" width="49" height="23" uuid="831f6c12-de9c-4c35-85c3-b53032a36ad5"/>
+					<textElement>
+						<font fontName="NewFontOne"/>
+					</textElement>
+					<text><![CDATA[邮箱：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="201" y="65" width="100" height="30" uuid="143a9231-14e3-47f9-b177-9749c7a86a65"/>
+					<textElement>
+						<font fontName="NewFontOne"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="72" y="34" width="100" height="30" uuid="51686474-6d17-492a-a38e-552992e2d497"/>
+					<textElement>
+						<font fontName="NewFontOne"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{userName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="49" y="142" width="100" height="30" uuid="9c1786de-020d-4056-a187-726f0efc0cd9"/>
+					<text><![CDATA[school Name:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="121" y="143" width="100" height="30" uuid="76963b8e-6831-4122-8834-db5aa39e4c67"/>
+					<textFieldExpression><![CDATA[$P{schoolName}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<summary>
+		<band height="267" splitType="Stretch"/>
+	</summary>
+</jasperReport>

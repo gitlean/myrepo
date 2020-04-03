@@ -11,10 +11,16 @@
 		<poi.version>3.9</poi.version>
 		<logback.version>1.2.3</logback.version>
 		<slf4j.version>1.7.5</slf4j.version>
+		<jasperreports.version>6.12.2</jasperreports.version>
 	</properties>
 
 	<dependencies>
-
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>${jasperreports.version}</version>
+		</dependency>
+		
 		<!-- spring begin -->
 		<dependency>
 			<groupId>org.springframework</groupId>

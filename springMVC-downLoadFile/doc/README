@@ -8,4 +8,28 @@ http://localhost:8080/springMVC-downLoadFile
 http://localhost:8080/springMVC-downLoadFile/mvc/index
 
 
+http://localhost:8080/springMVC-downLoadFile/excelDownloadManager/exportExcel
+
+----------------------------
+
+http://localhost:8080/springMVC-downLoadFile/fileDownload/exportPdf
+
+
+
+http://localhost:8080/springMVC-downLoadFile/fileDownload/exportPdf2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
