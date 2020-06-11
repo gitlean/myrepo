@@ -249,7 +249,7 @@
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<!-- 依赖commons-logging:commons-logging-->
-			<version>1.8.3</version>
+			<version>1.9.2</version>
 		</dependency>
 
 
