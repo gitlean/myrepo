@@ -21,7 +21,7 @@ public class ExecutorServiceDemo {
 
 	}
 	
-	static void caall1(){
+	static void call1(){
 	    ExecutorService executorService = Executors.newSingleThreadExecutor();  
 	      
 	    executorService.execute(new Runnable() {  
