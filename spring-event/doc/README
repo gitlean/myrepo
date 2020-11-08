@@ -1,20 +1,20 @@
 
-SpringÊÂ¼ş
+Springäº‹ä»¶
 
 
 
 http://enjiex.iteye.com/blog/1070094        important
-SpringÊÂ¼ş»úÖÆ
+Springäº‹ä»¶æœºåˆ¶
 
-JavaÌá¹©ÁËÊÂ¼ş»úÖÆ£¬ÔÚÊ¹ÓÃspringµÄÊ±ºò£¬ÎÒÃÇ¿ÉÒÔ°ÑÆÕÍ¨µÄjavaÊÂ¼ş²Ù×÷¶¨ÒåÎªbean¼¯³Éµ½beanÈİÆ÷ÖĞ£¬µ«»¹ÓĞÒ»ÖÖ¸ü·½±ãµÄ·½Ê½£¬¼´Ê¹ÓÃspringÒÑ¼¯³ÉµÄÊÂ¼şÖ§³Ö¡£
+Javaæä¾›äº†äº‹ä»¶æœºåˆ¶ï¼Œåœ¨ä½¿ç”¨springçš„æ—¶å€™ï¼Œæˆ‘ä»¬å¯ä»¥æŠŠæ™®é€šçš„javaäº‹ä»¶æ“ä½œå®šä¹‰ä¸ºbeané›†æˆåˆ°beanå®¹å™¨ä¸­ï¼Œä½†è¿˜æœ‰ä¸€ç§æ›´æ–¹ä¾¿çš„æ–¹å¼ï¼Œå³ä½¿ç”¨springå·²é›†æˆçš„äº‹ä»¶æ”¯æŒã€‚
 
 
 http://blog.csdn.net/it_man/article/details/8440737 
-spring·¢²¼ºÍ½ÓÊÕ¶¨ÖÆµÄÊÂ¼ş(springÊÂ¼ş´«²¥)
+springå‘å¸ƒå’Œæ¥æ”¶å®šåˆ¶çš„äº‹ä»¶(springäº‹ä»¶ä¼ æ’­)
 
 
 http://geek.csdn.net/news/detail/65193
-È¤Ì¸springÊÂ¼ş:ÒµÎñ½âñîÓëÒì²½µ÷ÓÃ
+è¶£è°ˆspringäº‹ä»¶:ä¸šåŠ¡è§£è€¦ä¸å¼‚æ­¥è°ƒç”¨
 
 -----------------------------------------------------
 ApplicationEvent         ApplicationListener
@@ -27,8 +27,8 @@ ApplicationEventPublisherAware     ApplicationContextAware
 
 
 
-ApplicationEventPublisher                ApplicationContext(ÊµÏÖÁËApplicationEventPublisher½Ó¿Ú)
-£¨publishEvent(ApplicationEvent)£©   £¨publishEvent(ApplicationEvent)£©
+ApplicationEventPublisher                ApplicationContext(å®ç°äº†ApplicationEventPublisheræ¥å£)
+ï¼ˆpublishEvent(ApplicationEvent)ï¼‰   ï¼ˆpublishEvent(ApplicationEvent)ï¼‰
 
 
 

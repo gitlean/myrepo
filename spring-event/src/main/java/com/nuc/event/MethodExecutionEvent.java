@@ -3,8 +3,8 @@ package com.nuc.event;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * ¶¨ÒåSpringÈİÆ÷ÖĞµÄÊÂ¼ş£¬ÓëjavaÆÕÍ¨µÄÊÂ¼ş¶¨ÒåÏà±È£¬Ö»ÊÇ¼Ì³ĞµÄ¸¸Àà²»Í¬¶øÒÑ£¬ÔÚ
- * ÔÚ¶¨ÒåÉÏ²¢Î´ÓĞÌ«´óµÄÇø±ğ£¬±Ï¾¹ApplicationEventÒ²ÊÇ¼Ì³Ğ×ÔEventObjectµÄ¡£
+ * å®šä¹‰Springå®¹å™¨ä¸­çš„äº‹ä»¶ï¼Œä¸javaæ™®é€šçš„äº‹ä»¶å®šä¹‰ç›¸æ¯”ï¼Œåªæ˜¯ç»§æ‰¿çš„çˆ¶ç±»ä¸åŒè€Œå·²ï¼Œåœ¨
+ * åœ¨å®šä¹‰ä¸Šå¹¶æœªæœ‰å¤ªå¤§çš„åŒºåˆ«ï¼Œæ¯•ç«ŸApplicationEventä¹Ÿæ˜¯ç»§æ‰¿è‡ªEventObjectçš„ã€‚
  */
 public class MethodExecutionEvent extends ApplicationEvent {
 

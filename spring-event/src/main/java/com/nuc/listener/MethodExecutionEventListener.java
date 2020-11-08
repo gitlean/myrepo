@@ -8,16 +8,16 @@ import com.nuc.event.MethodExecutionStatus;
 import com.nuc.nps.Constants;
 
 /**
- * SpringÈİÆ÷ÖĞµÄÊÂ¼ş¼àÌıÆ÷£¬ÓëjavaÖĞ»ù±¾µÄÊÂ¼ş¼àÌıÆ÷µÄ¶¨ÒåÏà±È£¬ÕâÀïĞèÒªÊµÏÖApplicationListener½Ó¿Ú
- * ApplicationListener½Ó¿ÚËäÈ»¼Ì³Ğ×ÔEventListener£¬µ«À©Õ¹ÁËEventListener
- * ËüÔÚ½Ó¿ÚÉùÃ÷ÖĞ¶¨ÒåÁËonApplicationEventµÄ½Ó¿Ú·½·¨£¬¶ø²»ÏñEventListenerÖ»×÷Îª±ê¼ÇĞÔ½Ó¿Ú¡£
+ * Springå®¹å™¨ä¸­çš„äº‹ä»¶ç›‘å¬å™¨ï¼Œä¸javaä¸­åŸºæœ¬çš„äº‹ä»¶ç›‘å¬å™¨çš„å®šä¹‰ç›¸æ¯”ï¼Œè¿™é‡Œéœ€è¦å®ç°ApplicationListeneræ¥å£
+ * ApplicationListeneræ¥å£è™½ç„¶ç»§æ‰¿è‡ªEventListenerï¼Œä½†æ‰©å±•äº†EventListener
+ * å®ƒåœ¨æ¥å£å£°æ˜ä¸­å®šä¹‰äº†onApplicationEventçš„æ¥å£æ–¹æ³•ï¼Œè€Œä¸åƒEventListeneråªä½œä¸ºæ ‡è®°æ€§æ¥å£ã€‚
  */
 
-public class MethodExecutionEventListener implements ApplicationListener<MethodExecutionEvent> {//·ºĞÍÏŞ¶¨ÏÂ·¶Î§
+public class MethodExecutionEventListener implements ApplicationListener<MethodExecutionEvent> {//æ³›å‹é™å®šä¸‹èŒƒå›´
 
-	//ÖØÔØonApplicationEvent·½·¨
+	//é‡è½½onApplicationEventæ–¹æ³•
 	public void onApplicationEvent(MethodExecutionEvent event) {
-		System.out.println("·¢²¼µÄÊÂ¼ş±»²¶×½µ½...");
+		System.out.println("å‘å¸ƒçš„äº‹ä»¶è¢«æ•æ‰åˆ°...");
 		if (event instanceof MethodExecutionEvent) {
 			if (Constants.BEGIN
 					.equals(((MethodExecutionEvent) event)

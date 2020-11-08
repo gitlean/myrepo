@@ -10,9 +10,9 @@ import com.nuc.nps.Constants;
 public class MethodExecutionEventPublisher implements
 		ApplicationEventPublisherAware {
 
-	// ApplicationEventPublisher£ºspringµÄÊÂ¼ş·¢²¼Õß½Ó¿Ú£¬¶¨ÒåÁË·¢²¼ÊÂ¼şµÄ½Ó¿Ú·½·¨publishEvent¡£
-	// ÒòÎªApplicationContextÊµÏÖÁË¸Ã½Ó¿Ú£¬Òò´ËspringµÄApplicationContextÊµÀı¾ßÓĞ·¢²¼ÊÂ¼şµÄ¹¦ÄÜ(publishEvent·½·¨ÔÚAbstractApplicationContextÖĞÓĞÊµÏÖ)¡£
-	// ÔÚÊ¹ÓÃµÄÊ±ºò£¬Ö»ĞèÒª°ÑApplicationEventPublisherµÄÒıÓÃ¶¨Òåµ½ApplicationEventPublisherAwareµÄÊµÏÖÖĞ£¬springÈİÆ÷»áÍê³É¶ÔApplicationEventPublisherµÄ×¢Èë¡£
+	// ApplicationEventPublisherï¼šspringçš„äº‹ä»¶å‘å¸ƒè€…æ¥å£ï¼Œå®šä¹‰äº†å‘å¸ƒäº‹ä»¶çš„æ¥å£æ–¹æ³•publishEventã€‚
+	// å› ä¸ºApplicationContextå®ç°äº†è¯¥æ¥å£ï¼Œå› æ­¤springçš„ApplicationContextå®ä¾‹å…·æœ‰å‘å¸ƒäº‹ä»¶çš„åŠŸèƒ½(publishEventæ–¹æ³•åœ¨AbstractApplicationContextä¸­æœ‰å®ç°)ã€‚
+	// åœ¨ä½¿ç”¨çš„æ—¶å€™ï¼Œåªéœ€è¦æŠŠApplicationEventPublisherçš„å¼•ç”¨å®šä¹‰åˆ°ApplicationEventPublisherAwareçš„å®ç°ä¸­ï¼Œspringå®¹å™¨ä¼šå®Œæˆå¯¹ApplicationEventPublisherçš„æ³¨å…¥ã€‚
 	private ApplicationEventPublisher eventPublisher;
 
 	public void methodToMonitor() {
