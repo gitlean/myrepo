@@ -1,0 +1,12 @@
+https://blog.csdn.net/jiuqiyuliang/article/details/48758203#reply
+
+
+
+
+http://localhost:8080/spring-activemq-02/activemq/index
+
+http://localhost:8080/spring-activemq-02/activemq/queue?message=Hello
+
+
+http://localhost:8080/spring-activemq-02/activemq/topic?message=Hello
+

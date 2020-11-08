@@ -1,13 +1,25 @@
 
+windows
+%ACTIVEMQ_HOME%\bin\win64\activemq.bat
+
+https://www.cnblogs.com/sam-uncle/p/10979049.html
+https://www.cnblogs.com/biehongli/p/11522793.html
+-------------------------------
+
 ActiveMQ与Spring集成
 
-这里示例消息队列 异步消费 和 Pub/Sub
+这里示例   Point-To-Point的队列消息   [还是同步消息]
 
 
+队列模型和PUB/SUB模型的区别，Queue只能由一个消费者接收，
+其他Queue中的成员无法接受到被已消费的信息，
+而Topic则可以，只要是订阅了Topic的消费者，
+全部可以获取到生产者发布的信息。
 
+---------------------------------------------------
 
 参考
-http://blog.csdn.net/jiuqiyuliang/article/details/48758203#reply
+http://blog.csdn.net/jiuqiyuliang/article/details/48758203#reply     系列
 https://www.cnblogs.com/leiOOlei/p/5075402.html      --base
 http://blog.163.com/gibby_l/blog/static/83003161201481935249884/
 

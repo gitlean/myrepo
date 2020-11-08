@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amq="http://activemq.apache.org/schema/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:amq="http://activemq.apache.org/schema/core"
 	xmlns:jms="http://www.springframework.org/schema/jms"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd   
@@ -11,6 +12,10 @@
         http://www.springframework.org/schema/jms/spring-jms-4.0.xsd
         http://activemq.apache.org/schema/core
         http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+
+ 
+
 
 	<!-- ActiveMQ 连接工厂 -->
 	<!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供 -->
@@ -30,50 +35,65 @@
 		<property name="sessionCacheSize" value="100" />
 	</bean>
 
-	<!-- 定义消息队列（Queue） -->
-	<bean id="demoQueueDestination" class="org.apache.activemq.command.ActiveMQQueue">
-		<!-- 设置消息队列的名字 -->
-		<constructor-arg>
-			<value>gzframe.demo</value>
-		</constructor-arg>
-	</bean>
-
 
 	<!-- Spring JmsTemplate 的消息生产者 start -->
+
 	<!-- 定义JmsTemplate的Queue类型 -->
-	<!-- 配置JMS模板（Queue），Spring提供的JMS工具类，它发送、接收消息。 -->
-	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+	<bean id="jmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
 		<!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
 		<constructor-arg ref="connectionFactory" />
-		<!-- 设置消息队列的名字 -->
-		<property name="defaultDestination" ref="demoQueueDestination" />
 		<!-- 非pub/sub模型（发布/订阅），即队列模式 -->
 		<property name="pubSubDomain" value="false" />
+	</bean>
 
+	<!-- 定义JmsTemplate的Topic类型 -->
+	<bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
+		<constructor-arg ref="connectionFactory" />
+		<!-- pub/sub模型（发布/订阅） -->
+		<property name="pubSubDomain" value="true" />
 	</bean>
 
 	<!--Spring JmsTemplate 的消息生产者 end -->
 
 
 
-	<!-- 配置消息队列监听者（Queue） -->
-	<bean id="queueMessageListener" class="com.gzframe.demo.activemq.listener.QueueMessageListener" />
-
-	<!-- 显示注入消息监听容器（Queue），配置连接工厂，监听的目标是demoQueueDestination，监听器是上面定义的监听器 -->
-	<bean id="queueListenerContainer"
-		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-		<property name="connectionFactory" ref="connectionFactory" />
-		<property name="destination" ref="demoQueueDestination" />
-		<property name="messageListener" ref="queueMessageListener" />
+	<!-- 定义消息队列（Queue） -->
+	<bean id="normalQueueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<!-- 设置消息队列的名字 -->
+		<constructor-arg>
+			<value>test.queue</value>
+		</constructor-arg>
 	</bean>
 
 
-	<!-- ************************************************************** -->
+	<!-- 定义消息Topic（Topic） -->
+	<bean id="topicQueueDestination" class="org.apache.activemq.command.ActiveMQTopic">
+		<!-- 设置消息队列的名字 -->
+		<constructor-arg>
+			<value>test.topic</value>
+		</constructor-arg>
+	</bean>
+	
+	
+
+	<!-- 消息消费者 start -->
+
 	<!-- 定义Queue监听器 -->
 	<jms:listener-container destination-type="queue"
 		container-type="default" connection-factory="connectionFactory"
 		acknowledge="auto">
-		<jms:listener destination="demoQueueDestination" ref="queueReceiver1" />
+		<jms:listener destination="test.queue" ref="queueReceiver1" />
+		<jms:listener destination="test.queue" ref="queueReceiver2" />
 	</jms:listener-container>
-	<!-- ************************************************************** -->
+
+	<!-- 定义Topic监听器 -->
+	<jms:listener-container destination-type="topic"
+		container-type="default" connection-factory="connectionFactory"
+		acknowledge="auto">
+		<jms:listener destination="test.topic" ref="topicReceiver1" />
+		<jms:listener destination="test.topic" ref="topicReceiver2" />
+	</jms:listener-container>
+
+	<!-- 消息消费者 end -->
 </beans>  
