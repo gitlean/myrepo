@@ -11,7 +11,7 @@ token持久化到数据库里
 
 ----------------------------------------------------------
 http://localhost:8080/spring-security-oauth
-
+aa/aa
 
 获取access_token  URL ：
 http://localhost:8080/spring-security-oauth-02/oauth/token?client_id=mobile_1&client_secret=secret_1&grant_type=password&username=aa&password=aa

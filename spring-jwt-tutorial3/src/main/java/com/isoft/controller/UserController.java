@@ -30,6 +30,9 @@ public class UserController {
 		ResponseData responseData = ResponseData.ok();
 		// 先到数据库验证
 		Integer loginId = userService.checkLogin(login);
+		
+		
+		
 		if (null != loginId) {
 			User user = userService.getUserByLoginId(loginId);
 			login.setId(loginId);

@@ -23,8 +23,10 @@ public class TestMain {
 			int bytesRead = inChannel.read(buf);
 			while (bytesRead != -1) {
 				System.out.println("\nRead " + bytesRead);// 读取数量
+				
 				// 反转Buffer,将Buffer从写模式切换到读模式
 				buf.flip();
+				
 				while (buf.hasRemaining()) {
 					System.out.print((char) buf.get());// read 1 byte at a time
 				}

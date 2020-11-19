@@ -17,7 +17,7 @@ public class MyServer {
 			serverSocketChannel = ServerSocketChannel.open();
 
 			serverSocketChannel.socket().bind(new InetSocketAddress(9991));
-			serverSocketChannel.configureBlocking(false);
+			serverSocketChannel.configureBlocking(false);//非阻塞
 			while (true) {
 
 				SocketChannel socketChannel = serverSocketChannel.accept();
@@ -36,11 +36,11 @@ public class MyServer {
 					
 					// do something with socketChannel...
 					ByteBuffer buf = ByteBuffer.allocate(48);
-					int bytesRead = socketChannel.read(buf);
+					int bytesRead = socketChannel.read(buf);//写入Buffer
 					while (bytesRead != -1) {
 						System.out.println("\nRead " + bytesRead);// 读取数量
 						// 反转Buffer
-						buf.flip();
+						buf.flip();//可读模式
 						while (buf.hasRemaining()) {
 							System.out.print((char) buf.get());
 						}

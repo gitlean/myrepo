@@ -22,7 +22,7 @@ public class SemaphoreTest {
        final Semaphore semp = new Semaphore(SEMP_COUNT);  
        // 模拟20个客户端访问 
        for (int index = 0; index < 20; index++) {
-           final int NO = index;  
+           //final int NO = index;  
            Runnable run = new Runnable() {  
                public void run() {  
                    try {  

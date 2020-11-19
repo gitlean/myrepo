@@ -35,12 +35,18 @@ public class SemaphoreTest {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("线程" + Thread.currentThread().getName() + 
-                            "即将离开");                    
-                    sp.release();//释放许可，许可数加1
-                    //下面代码有时候执行不准确，因为其没有和上面的代码合成原子单元
-                    System.out.println("线程" + Thread.currentThread().getName() + 
-                            "已离开，当前已有" + (3-sp.availablePermits()) + "个并发");                    
+                    
+                    synchronized(this){
+                        System.out.println("线程" + Thread.currentThread().getName() + 
+                                "即将离开");                    
+                        sp.release();//释放许可，许可数加1
+                        //下面代码有时候执行不准确，因为其没有和上面的代码合成原子单元
+                        System.out.println("线程" + Thread.currentThread().getName() + 
+                                "已离开，当前已有" + (3-sp.availablePermits()) + "个并发");   
+                    }
+               
+                    
+                    
                 }
             };
             service.execute(runnable);            

@@ -18,11 +18,12 @@ public class MyClient {
 		try {
 			socketChannel = SocketChannel.open();
 			socketChannel.configureBlocking(false);// 设置非阻塞模式
-			socketChannel.connect(new InetSocketAddress("127.0.0.1", 9991));
+			socketChannel.connect(new InetSocketAddress("127.0.0.1", 9991));//因为设置为非阻塞模式，所以connect会立即返回(本身有超时设置)
 
 			// 此时调用connect()，该方法可能在连接建立之前就返回了。为了确定连接是否建立，可以调用finishConnect()的方法。像这样：
 			while (!socketChannel.finishConnect()) {
-
+ 
+				
 				Thread.currentThread().sleep(1000);
 
 			}

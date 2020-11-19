@@ -6,6 +6,10 @@ springmvc + jwt
 
 
 http://localhost:8080/spring-jwt-tutorial/users/login
+http://localhost:8080/spring-jwt-tutorial/users/login?username=imjack&password=123456
+
+
+
 
 http://localhost:8080/spring-jwt-tutorial/users/model
 

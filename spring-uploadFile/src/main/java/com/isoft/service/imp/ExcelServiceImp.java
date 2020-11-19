@@ -12,6 +12,7 @@ import com.isoft.service.IExcelService;
 public class ExcelServiceImp implements IExcelService{
 	@Override
     public void saveBath(List<String[]> list) {
+		/*
         for (String[] strings : list) {
             Drug drug = new Drug();
             drug.setName(strings[0]);
@@ -31,6 +32,7 @@ public class ExcelServiceImp implements IExcelService{
             drug.setDrug_classify("8afa9409591f762b01591ffa62ff0006");
             this.save(drug);
         }
+        */
     }
 	
 	

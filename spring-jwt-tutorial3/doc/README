@@ -2,7 +2,7 @@
 1、获取JWT
 http://localhost:8080/spring-jwt-tutorial3/login?email=john&password=123456
 
-2、以下列三种方式访问服务，
+2、尝试以下列三种方式访问服务，
 
 http://localhost:8080/spring-jwt-tutorial3/add?a=1&b=2
 
@@ -14,12 +14,43 @@ http://localhost:8080/spring-jwt-tutorial3/add?a=1&b=2&loginId=1&token=eyJ0eXAiO
 //TokenInterceptor加了loginId验证
 ---------------------------------------------------------------------
 
+一个完整示例:  intercetor+JWT实验身份认证
 
+
+---------------------------------------------------------------------
 
 http://blog.csdn.net/change_on/article/details/71191894      Interceptor
 告别session！ spring 集成 jwt 验证方式
 
 ---------------------------------------------------------------------
+
+
+
+使用的JWT库是         com.auth0.java-jwt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -26,6 +26,7 @@
 		<property name="replaceableBeanNameRigistry">
 			<map>
 				<entry key="ryBean" value="ayBean" />
+				<entry key="byBean" value="cyBean" />
 			</map>
 		</property>
 	</bean>

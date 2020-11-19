@@ -1,14 +1,11 @@
-package com.xxx.test;  
+package test;  
 
-import java.util.List;
-
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.xxx.pojo.Film;
-import com.xxx.service.FilmService;
-
+import java.util.List;  
 import junit.framework.TestCase;  
+import org.springframework.context.ApplicationContext;  
+import org.springframework.context.support.ClassPathXmlApplicationContext;  
+import com.xxx.pojo.Film;  
+import com.xxx.service.FilmService;  
  
 /** 
  * 测试Spring整合MyBatis 
@@ -32,7 +29,7 @@ public class TestSpringMyBatis extends TestCase {
         FilmService filmService = (FilmService)context.getBean("filmService");  
           
         try {  
-        	
+              
             /*以下为影片业务逻辑操作*/  
               
             //1、添加一部影片  
@@ -63,4 +60,4 @@ public class TestSpringMyBatis extends TestCase {
         }  
          
     }  
-} 
+}  

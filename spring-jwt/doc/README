@@ -1,4 +1,8 @@
 http://www.cnblogs.com/xiekeli/p/5607107.html
+一个JWT实际上就是一个字符串，它由三部分组成，头部、载荷与签名。
+请求认证
+基于Token的认证机制会在每一次请求中都带上完成签名的Token信息，
+这个Token信息可能在COOKIE中，也可能在HTTP的Authorization头中；
 
 
 

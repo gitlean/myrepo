@@ -35,8 +35,9 @@ Semaphore 是只允许一定数量的线程同时执行一段任务,即最大并
 http://blog.csdn.net/shihuacai/article/details/8856407
 
 
-
-
+***********************************************************************************
+Runnable
+Callable
 
 
 

@@ -2,6 +2,21 @@ https://www.cnblogs.com/0201zcr/p/5328847.html    important
 spring security oauth2.0 实现
 没有与JWT结合
 
+----------------
+https://www.cnblogs.com/alan6/p/12335416.html
+OAuth2中使用token验证用户登录合法性，但token最大的问题是不携带用户信息，
+资源服务器无法在本地进行验证，每次对于资源的访问，
+资源服务器都需要向认证服务器发起请求，
+一是验证token的有效性，二是获取token对应的用户信息。
+如果有大量的此类请求，无疑处理效率是很低，且认证服务器会变成一个中心节点，
+这在分布式架构下很影响性能。
+
+JWT就是在这样的背景下诞生的，从本质上来说，jwt和OAuth2没有可比性。
+普通的oauth2颁发的就是一串随机hash字符串，本身无意义，
+而jwt使用一种特殊格式的token
+
+---------------------
+
 
 
 http://blog.csdn.net/monkeyking1987/article/details/16828059
@@ -50,5 +65,33 @@ https://blog.csdn.net/u013815546/article/details/76898524
 
 关于oauth2，其实是一个规范，本文重点讲解spring对他进行的实现，如果你还不清楚授权服务器，资源服务器，认证授权等基础概念
 
+
+-----------------20201028-------------------
+https://www.jianshu.com/p/84a4b4a1e833
+
+https://www.jianshu.com/p/d80061e6d900
+
+https://blog.csdn.net/A15712399740/article/details/95234320
+
+
+OAuth 2.0 对于如何颁发令牌的细节，规定得非常详细。
+具体来说，一共分成四种授权类型（authorization grant），即四种颁发令牌的方式
+
+
+
+https://www.cnblogs.com/xugf/p/10726881.html
+
+
+https://blog.csdn.net/weixin_34080571/article/details/91715402
+首先声明oauth2是一种协议规范，spring-security-oauth2是对他的一种实现。
+其次，还有shiro实现，自己根据规范编写代码的实现方式。
+
+
+-------------------------------------------------------------------------------------
+
+
+
+
+org.zhangfc.demo4ssh.service.MyTokenService
 
 

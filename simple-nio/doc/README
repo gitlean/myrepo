@@ -36,8 +36,8 @@ Java NIO中的DatagramChannel是一个能收发UDP包的通道。因为UDP是无
 
 
 
-
-
+https://blog.csdn.net/u011381576/article/details/79876754
+NIO主要有三大核心部分：Channel(通道)，Buffer(缓冲区), Selector。传统IO基于字节流和字符流进行操作，而NIO基于Channel和Buffer(缓冲区)进行操作，数据总是从通道读取到缓冲区中，或者从缓冲区写入到通道中。
 
 
 

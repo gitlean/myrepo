@@ -32,7 +32,7 @@ class AAthread implements Runnable {
 
 	// static Object lock =new Object(); //如果是static修饰，就是类锁
 	// 相当于synchronized(AAthread.class)
-	Object lock = new Object(); // 对象锁 相当于synchronized(this)
+	 Object lock = new Object(); // 对象锁 相当于synchronized(this)
 
 	//还可以修饰方法 dosth() ，对象锁，因为是非静态方法；如果是静态方法则是类锁
 	
