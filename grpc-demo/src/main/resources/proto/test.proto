@@ -1,0 +1,25 @@
+syntax = "proto3";
+package grpc;
+option java_package = "com.mingluck.grpc";
+option java_outer_classname = "HelloWorldServiceProto";
+option java_multiple_files = true;
+//option java_generic_services = true; //使用mvn compile 会有服务类Greeter  
+//generic  一般的; 普通的; 通用的; 无厂家商标的; 无商标的;
+
+
+//服务端接口类
+service Greeter {
+  //服务端接口方法
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+//请求参数
+message HelloRequest {
+  string name = 1;
+  string sex = 2;
+}
+
+//响应参数
+message HelloReply {
+  string message = 1;
+}

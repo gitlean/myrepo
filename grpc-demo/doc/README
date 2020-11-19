@@ -1,0 +1,9 @@
+https://www.cnblogs.com/boshen-hzb/p/6555221.html
+
+HelloWorldServer调用模式参考
+https://blog.csdn.net/loveteda/article/details/86698929
+
+
+然后在cmd窗口中切换到项目pom.xml文件所在的目录，运行mvn compile命令，运行命令后目录结构会变成如下 
+
+
