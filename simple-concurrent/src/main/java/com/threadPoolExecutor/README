@@ -1,0 +1,26 @@
+https://www.jianshu.com/p/f030aa5d7a28
+
+https://blog.csdn.net/jgteng/article/details/54411423
+
+
+https://www.cnblogs.com/zxporz/p/10940251.html
+
+allowCoreThreadTimeout：是否允许核心线程空闲退出，默认值为false
+https://blog.csdn.net/qq_24082175/article/details/81019490
+
+
+very important
+https://blog.csdn.net/aitangyong/article/details/38822505
+这里需要注意的是：在刚刚创建ThreadPoolExecutor的时候，线程并不会立即启动，而是要等到有任务提交时才会启动，除非调用了prestartCoreThread/prestartAllCoreThreads事先启动核心线程。
+
+新提交一个任务时的处理流程很明显：
+1、如果线程池的当前大小还没有达到基本大小(poolSize < corePoolSize)，那么就新增加一个线程处理新提交的任务；
+2、如果当前大小已经达到了基本大小，就将新提交的任务提交到阻塞队列排队，等候处理workQueue.offer(command)；
+3、如果队列容量已达上限，并且当前大小poolSize没有达到maximumPoolSize，那么就新增线程来处理任务；
+4、如果队列已满，并且当前线程数目也已经达到上限，那么意味着线程池的处理能力已经达到了极限，此时需要拒绝新增加的任务。至于如何拒绝处理新增的任务，取决于线程池的饱和策略RejectedExecutionHandler。
+
+
+
+
+
+
